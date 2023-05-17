@@ -37,12 +37,17 @@ namespace HotelManagement_ADO
                 this.Hide();
                 inter.SetUserDetails(storedUsername, role);
                 inter.ShowDialog();
-                this.Show();
+  
             }
             else
             {
                 MessageBox.Show("Invalid username or password");
             }
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
