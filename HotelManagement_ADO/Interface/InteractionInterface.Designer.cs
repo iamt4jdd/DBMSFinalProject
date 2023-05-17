@@ -30,6 +30,7 @@
         {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.customersBtn = new FontAwesome.Sharp.IconButton();
             this.productBtn = new FontAwesome.Sharp.IconButton();
             this.serviceBtn = new FontAwesome.Sharp.IconButton();
             this.roomBtn = new FontAwesome.Sharp.IconButton();
@@ -38,17 +39,16 @@
             this.userDetailBtn = new FontAwesome.Sharp.IconButton();
             this.userBtn = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.topPanel = new System.Windows.Forms.Panel();
-            this.checkOutBtn = new FontAwesome.Sharp.IconButton();
-            this.servicesBookingBtn = new FontAwesome.Sharp.IconButton();
-            this.roomBookingBtn = new FontAwesome.Sharp.IconButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.customersBtn = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.roomBookingBtn = new FontAwesome.Sharp.IconButton();
+            this.servicesBookingBtn = new FontAwesome.Sharp.IconButton();
+            this.checkOutBtn = new FontAwesome.Sharp.IconButton();
+            this.topPanel = new System.Windows.Forms.Panel();
             this.mainPanel.SuspendLayout();
             this.leftPanel.SuspendLayout();
-            this.topPanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -79,6 +79,28 @@
             this.leftPanel.Size = new System.Drawing.Size(300, 1000);
             this.leftPanel.TabIndex = 5;
             // 
+            // customersBtn
+            // 
+            this.customersBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.customersBtn.FlatAppearance.BorderSize = 0;
+            this.customersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customersBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customersBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.customersBtn.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
+            this.customersBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.customersBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.customersBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customersBtn.Location = new System.Drawing.Point(0, 890);
+            this.customersBtn.Name = "customersBtn";
+            this.customersBtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.customersBtn.Size = new System.Drawing.Size(300, 98);
+            this.customersBtn.TabIndex = 16;
+            this.customersBtn.Text = "Customers";
+            this.customersBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customersBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customersBtn.UseVisualStyleBackColor = true;
+            this.customersBtn.Click += new System.EventHandler(this.customersBtn_Click);
+            // 
             // productBtn
             // 
             this.productBtn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -99,6 +121,7 @@
             this.productBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.productBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.productBtn.UseVisualStyleBackColor = true;
+            this.productBtn.Click += new System.EventHandler(this.productBtn_Click);
             // 
             // serviceBtn
             // 
@@ -120,6 +143,7 @@
             this.serviceBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.serviceBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.serviceBtn.UseVisualStyleBackColor = true;
+            this.serviceBtn.Click += new System.EventHandler(this.serviceBtn_Click);
             // 
             // roomBtn
             // 
@@ -141,6 +165,7 @@
             this.roomBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.roomBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.roomBtn.UseVisualStyleBackColor = true;
+            this.roomBtn.Click += new System.EventHandler(this.roomBtn_Click);
             // 
             // bookingBtn
             // 
@@ -162,6 +187,7 @@
             this.bookingBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bookingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bookingBtn.UseVisualStyleBackColor = true;
+            this.bookingBtn.Click += new System.EventHandler(this.bookingBtn_Click);
             // 
             // bookingDetailBtn
             // 
@@ -183,6 +209,7 @@
             this.bookingDetailBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bookingDetailBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bookingDetailBtn.UseVisualStyleBackColor = true;
+            this.bookingDetailBtn.Click += new System.EventHandler(this.bookingDetailBtn_Click);
             // 
             // userDetailBtn
             // 
@@ -204,6 +231,7 @@
             this.userDetailBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.userDetailBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.userDetailBtn.UseVisualStyleBackColor = true;
+            this.userDetailBtn.Click += new System.EventHandler(this.userDetailBtn_Click);
             // 
             // userBtn
             // 
@@ -225,6 +253,7 @@
             this.userBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.userBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.userBtn.UseVisualStyleBackColor = true;
+            this.userBtn.Click += new System.EventHandler(this.userBtn_Click);
             // 
             // panel3
             // 
@@ -234,57 +263,26 @@
             this.panel3.Size = new System.Drawing.Size(300, 204);
             this.panel3.TabIndex = 8;
             // 
-            // topPanel
+            // panel2
             // 
-            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.topPanel.Controls.Add(this.panel2);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(0, 0);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1642, 129);
-            this.topPanel.TabIndex = 6;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel2.Controls.Add(this.checkOutBtn);
+            this.panel2.Controls.Add(this.servicesBookingBtn);
+            this.panel2.Controls.Add(this.roomBookingBtn);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1642, 105);
+            this.panel2.TabIndex = 8;
             // 
-            // checkOutBtn
+            // panel1
             // 
-            this.checkOutBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.checkOutBtn.FlatAppearance.BorderSize = 0;
-            this.checkOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkOutBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkOutBtn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.checkOutBtn.IconChar = FontAwesome.Sharp.IconChar.AddressBook;
-            this.checkOutBtn.IconColor = System.Drawing.Color.Gainsboro;
-            this.checkOutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.checkOutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.checkOutBtn.Location = new System.Drawing.Point(992, 0);
-            this.checkOutBtn.Name = "checkOutBtn";
-            this.checkOutBtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.checkOutBtn.Size = new System.Drawing.Size(270, 127);
-            this.checkOutBtn.TabIndex = 14;
-            this.checkOutBtn.Text = "Check Out";
-            this.checkOutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.checkOutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.checkOutBtn.UseVisualStyleBackColor = true;
-            // 
-            // servicesBookingBtn
-            // 
-            this.servicesBookingBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.servicesBookingBtn.FlatAppearance.BorderSize = 0;
-            this.servicesBookingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.servicesBookingBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.servicesBookingBtn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.servicesBookingBtn.IconChar = FontAwesome.Sharp.IconChar.AddressBook;
-            this.servicesBookingBtn.IconColor = System.Drawing.Color.Gainsboro;
-            this.servicesBookingBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.servicesBookingBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.servicesBookingBtn.Location = new System.Drawing.Point(772, 0);
-            this.servicesBookingBtn.Name = "servicesBookingBtn";
-            this.servicesBookingBtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.servicesBookingBtn.Size = new System.Drawing.Size(220, 127);
-            this.servicesBookingBtn.TabIndex = 13;
-            this.servicesBookingBtn.Text = "Services";
-            this.servicesBookingBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.servicesBookingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.servicesBookingBtn.UseVisualStyleBackColor = true;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(502, 105);
+            this.panel1.TabIndex = 0;
             // 
             // roomBookingBtn
             // 
@@ -300,54 +298,67 @@
             this.roomBookingBtn.Location = new System.Drawing.Point(502, 0);
             this.roomBookingBtn.Name = "roomBookingBtn";
             this.roomBookingBtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.roomBookingBtn.Size = new System.Drawing.Size(270, 127);
+            this.roomBookingBtn.Size = new System.Drawing.Size(270, 105);
             this.roomBookingBtn.TabIndex = 12;
             this.roomBookingBtn.Text = "Booking Room";
             this.roomBookingBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.roomBookingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.roomBookingBtn.UseVisualStyleBackColor = true;
+            this.roomBookingBtn.Click += new System.EventHandler(this.roomBookingBtn_Click);
             // 
-            // panel1
+            // servicesBookingBtn
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(502, 127);
-            this.panel1.TabIndex = 0;
+            this.servicesBookingBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.servicesBookingBtn.FlatAppearance.BorderSize = 0;
+            this.servicesBookingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.servicesBookingBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicesBookingBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.servicesBookingBtn.IconChar = FontAwesome.Sharp.IconChar.AddressBook;
+            this.servicesBookingBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.servicesBookingBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.servicesBookingBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.servicesBookingBtn.Location = new System.Drawing.Point(772, 0);
+            this.servicesBookingBtn.Name = "servicesBookingBtn";
+            this.servicesBookingBtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.servicesBookingBtn.Size = new System.Drawing.Size(220, 105);
+            this.servicesBookingBtn.TabIndex = 13;
+            this.servicesBookingBtn.Text = "Services";
+            this.servicesBookingBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.servicesBookingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.servicesBookingBtn.UseVisualStyleBackColor = true;
+            this.servicesBookingBtn.Click += new System.EventHandler(this.servicesBookingBtn_Click);
             // 
-            // panel2
+            // checkOutBtn
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.panel2.Controls.Add(this.checkOutBtn);
-            this.panel2.Controls.Add(this.servicesBookingBtn);
-            this.panel2.Controls.Add(this.roomBookingBtn);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1642, 127);
-            this.panel2.TabIndex = 8;
+            this.checkOutBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.checkOutBtn.FlatAppearance.BorderSize = 0;
+            this.checkOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkOutBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkOutBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.checkOutBtn.IconChar = FontAwesome.Sharp.IconChar.AddressBook;
+            this.checkOutBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.checkOutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.checkOutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.checkOutBtn.Location = new System.Drawing.Point(992, 0);
+            this.checkOutBtn.Name = "checkOutBtn";
+            this.checkOutBtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.checkOutBtn.Size = new System.Drawing.Size(270, 105);
+            this.checkOutBtn.TabIndex = 14;
+            this.checkOutBtn.Text = "Check Out";
+            this.checkOutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.checkOutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.checkOutBtn.UseVisualStyleBackColor = true;
+            this.checkOutBtn.Click += new System.EventHandler(this.checkOutBtn_Click);
             // 
-            // customersBtn
+            // topPanel
             // 
-            this.customersBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.customersBtn.FlatAppearance.BorderSize = 0;
-            this.customersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customersBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customersBtn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.customersBtn.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
-            this.customersBtn.IconColor = System.Drawing.Color.Gainsboro;
-            this.customersBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.customersBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customersBtn.Location = new System.Drawing.Point(0, 890);
-            this.customersBtn.Name = "customersBtn";
-            this.customersBtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.customersBtn.Size = new System.Drawing.Size(300, 98);
-            this.customersBtn.TabIndex = 16;
-            this.customersBtn.Text = "Customers";
-            this.customersBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customersBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customersBtn.UseVisualStyleBackColor = true;
+            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.topPanel.Controls.Add(this.panel2);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(1642, 107);
+            this.topPanel.TabIndex = 6;
             // 
             // InteractionInterface
             // 
@@ -358,11 +369,12 @@
             this.Controls.Add(this.leftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InteractionInterface";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.mainPanel.ResumeLayout(false);
             this.leftPanel.ResumeLayout(false);
-            this.topPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.topPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -370,7 +382,6 @@
         #endregion
 
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Panel leftPanel;
         private FontAwesome.Sharp.IconButton productBtn;
         private FontAwesome.Sharp.IconButton serviceBtn;
@@ -380,11 +391,12 @@
         private FontAwesome.Sharp.IconButton userDetailBtn;
         private FontAwesome.Sharp.IconButton userBtn;
         private System.Windows.Forms.Panel panel3;
+        private FontAwesome.Sharp.IconButton customersBtn;
+        private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton checkOutBtn;
         private FontAwesome.Sharp.IconButton servicesBookingBtn;
         private FontAwesome.Sharp.IconButton roomBookingBtn;
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton customersBtn;
     }
 }

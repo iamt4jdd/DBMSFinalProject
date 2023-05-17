@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement_ADO.AdminForms;
 using HotelManagement_ADO.EmployeeForms;
+using HotelManagement_ADO.Interface;
 
 namespace HotelManagement_ADO
 {
@@ -19,8 +20,9 @@ namespace HotelManagement_ADO
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new EmployeeService());
-            //Application.Run(new Service());
+
+            Application.Run(new InteractionInterface());
+
 
         }
     }
