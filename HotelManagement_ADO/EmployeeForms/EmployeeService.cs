@@ -19,13 +19,14 @@ namespace HotelManagement_ADO.EmployeeForms
         int rBooked;
         int customerID = -1;
         string name;
-
+      
         DBMain database = null;
         public EmployeeService()
         {
             InitializeComponent();
             database = new DBMain();
            LoadDataAvai();
+            this.btnAddService.Enabled = false;
 
         }
         void LoadDataAvai()
@@ -52,6 +53,7 @@ namespace HotelManagement_ADO.EmployeeForms
                 customerID = ReturnCustomerID(txtName.Text);
                 dgvBookedServices.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvBookedServices_CellClick(null, null);
+                this.btnAddService.Enabled = true;
             }
             else
             {
@@ -139,6 +141,7 @@ namespace HotelManagement_ADO.EmployeeForms
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
+            this.btnAddService.Enabled = false;
             name = txtName.Text;
             LoadDataBooked();
         }
