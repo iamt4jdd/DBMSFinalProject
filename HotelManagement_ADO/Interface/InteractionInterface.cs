@@ -46,5 +46,59 @@ namespace HotelManagement_ADO.Interface
             childForm.Show();
         }
 
+        private void userBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Users());
+        }
+
+        private void userDetailBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new UserDetail());
+        }
+
+        private void bookingDetailBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BookingDetail());
+        }
+
+        private void bookingBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Booking());
+        }
+
+        private void roomBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Room());
+        }
+
+        private void serviceBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Service());
+        }
+
+        private void productBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Product());
+        }
+
+        private void customersBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Customers());
+        }
+
+        private void roomBookingBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new EmployeeBooking());
+        }
+
+        private void servicesBookingBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new EmployeeService());
+        }
+
+        private void checkOutBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CheckOut());
+        }
     }
 }
