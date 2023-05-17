@@ -12,43 +12,33 @@ using System.Data.SqlClient;
 using HotelManagement_ADO.Interface;
 using HotelManagement_ADO.DB_Layer;
 using HotelManagement_ADO.BS_Layer;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace TESTPROJECT
+namespace HotelManagement_ADO
 {
-    public class BLLogin
+    public partial class FormLogin : Form
     {
-        DBMain db = null;
-        public BLLogin()
+        BLLogin Login = new BLLogin();
+        public FormLogin()
         {
-            db = new DBMain();
+            InitializeComponent();
         }
 
-        private void closeBtn_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-        public bool CheckLogin(string username, string password)
-        {
-            bool result = false;
-            string strSql = "SELECT Email, password FROM Users";
-            SqlDataReader read = null;
-            read = db.ExecuteQueryDataReader(strSql, CommandType.Text);
-            while (read.Read())
+            string username = email.Text;
+            string password = passwordUser.Text;
+            if (Login.CheckLogin(username, password))
             {
-                string email = read.GetValue(0).ToString().Trim();
-                string storedPassword = read.GetValue(1).ToString().Trim();
-                string storedUsername = email.Substring(0, email.IndexOf("@"));
-
-                if (email == username && storedPassword == password)
-                {
-                    result = true;
-                    string newConnect = "Data Source=DESKTOP-EP66OTM\\MSSQLSERVER01;Initial Catalog=HotelManagementSystem;User ID=" + storedUsername + ";Password=" + password;
-                    DBMain.SetConnStr(newConnect, username, password);
-                    break;
-                }
+                InteractionInterface inter = new InteractionInterface();
+                this.Hide();
+                inter.ShowDialog();
+                this.Show();
             }
-            return result;
+            else
+            {
+                MessageBox.Show("Invalid username or password");
+            }
         }
-
     }
 }
