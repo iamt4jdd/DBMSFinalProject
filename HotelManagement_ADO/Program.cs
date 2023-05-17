@@ -20,6 +20,7 @@ namespace HotelManagement_ADO
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new EmployeeService());
+            //Application.Run(new Service());
 
         }
     }
