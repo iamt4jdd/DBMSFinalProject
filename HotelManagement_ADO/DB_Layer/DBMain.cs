@@ -16,7 +16,7 @@ namespace HotelManagement_ADO.DB_Layer
         SqlCommand comm = null;
         SqlDataAdapter da = null;
         public static string username, password;
-        public static string ConnStr = "Data Source=DESKTOP-EP66OTM\\MSSQLSERVER01;Initial Catalog=HotelManagementSystem;Integrated Security=True";
+        public static string ConnStr = "Data Source=localhost;Initial Catalog=HotelManagementSystem;Integrated Security=True";
         public DBMain()
         {
             conn = new SqlConnection(ConnStr);
@@ -40,6 +40,44 @@ namespace HotelManagement_ADO.DB_Layer
             da.Fill(ds);
             return ds;
         }
+
+        public DataSet ExecuteQueryDataSet2(string strSQL, CommandType ct, SqlParameter parameter = null)
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            comm.CommandText = strSQL;
+            comm.CommandType = ct;
+            comm.Parameters.Clear(); // Clear any existing parameters
+            if (parameter != null)
+            {
+                comm.Parameters.Add(parameter);
+            }
+            da = new SqlDataAdapter(comm);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        public DataSet ExecuteQueryDataSet3(string strSQL, CommandType ct, params SqlParameter[] parameters)
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            comm.CommandText = strSQL;
+            comm.CommandType = ct;
+            comm.Parameters.Clear(); // Clear any existing parameters
+            if (parameters != null)
+            {
+                comm.Parameters.AddRange(parameters);
+            }
+            da = new SqlDataAdapter(comm);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+
 
         public void MyExecuteNonQuery(string sql)
         {
