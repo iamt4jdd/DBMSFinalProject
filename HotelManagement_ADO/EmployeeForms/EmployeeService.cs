@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HotelManagement_ADO.BS_Layer;
 using HotelManagement_ADO.DB_Layer;
 
 namespace HotelManagement_ADO.EmployeeForms
 {
     public partial class EmployeeService : Form
     {
-
+        string err;
         int rAvai;
         int rBooked;
         int customerID;
@@ -46,7 +46,7 @@ namespace HotelManagement_ADO.EmployeeForms
                 
                 string name = txtName.Text;
                 //var pro = qlhotelEntity.Database.ExecuteSqlCommand($"Exec FindServiceByName N'{name}'");
-                var proc = database.ExecuteQueryDataSet($"Exec Sp_FindServiceByName N'{name}", CommandType.Text);
+                var proc = database.ExecuteQueryDataSet($"Exec Sp_FindServiceByName N'{name}'", CommandType.Text);
                 DataTable dataTable = proc.Tables[0];
                 dgvBookedServices.DataSource = dataTable;
                 dgvBookedServices.ColumnHeadersHeight = 30;
@@ -64,8 +64,8 @@ namespace HotelManagement_ADO.EmployeeForms
         {
             try
             {
-                var proce = $"Exec SP_ADD_SERVICE '{Convert.ToInt32(txtBookID.Text)}, '{customerID}, '{Convert.ToInt32(dgvAvaiServices.Rows[rAvai].Cells[0].Value.ToString())}, '{Convert.ToDouble(dgvAvaiServices.Rows[rAvai].Cells[2].Value.ToString())}, '{Convert.ToInt32(txtAmount.Text)}, '{DateTime.Now}";
-                database.MyExecuteNonQuery(proce);
+                BLService dbSE = new BLService();
+                dbSE.AddService(Convert.ToInt32(this.txtBookID.Text), customerID, Convert.ToInt32(dgvAvaiServices.Rows[rAvai].Cells[0].Value.ToString()), Convert.ToDouble(dgvAvaiServices.Rows[rAvai].Cells[2].Value.ToString()), Convert.ToInt32(txtAmount.Text), DateTime.Now, ref err);
             }
             catch (Exception ex)
             {
@@ -103,8 +103,8 @@ namespace HotelManagement_ADO.EmployeeForms
         {
             try
             {
-                var proc = $"Exec SP_DELETE_SERVICE '{Convert.ToInt32(dgvBookedServices.Rows[rBooked].Cells[0].Value.ToString())}";
-                database.MyExecuteNonQuery(proc);
+                BLService dbSE = new BLService();
+                dbSE.DeleteService(ref err,Convert.ToInt32(dgvBookedServices.Rows[rBooked].Cells[2].Value.ToString()));
                 LoadDataAvai();
                 LoadDataBooked();
             }

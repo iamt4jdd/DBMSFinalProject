@@ -99,7 +99,7 @@ namespace HotelManagement_ADO.AdminForms
             if (Them)
             {
                 BLService dbSE = new BLService();
-                if (dbSE.AddService(Convert.ToInt32(this.txtSerID.Text), Convert.ToInt32(this.txtBookID.Text), Convert.ToInt32(this.txtCusID.Text), Convert.ToInt32(this.txtProID.Text), Convert.ToDouble(this.txtPrice.Text), Convert.ToInt32(this.txtAmount.Text), dtpPaydate.Value, ref err) == true) MessageBox.Show("Add successfully!"); ;
+                if (dbSE.AddService(Convert.ToInt32(this.txtBookID.Text), Convert.ToInt32(this.txtCusID.Text), Convert.ToInt32(this.txtProID.Text), Convert.ToDouble(this.txtPrice.Text), Convert.ToInt32(this.txtAmount.Text), dtpPaydate.Value, ref err) == true) MessageBox.Show("Add successfully!"); ;
 
                 LoadData();
             }

@@ -20,11 +20,11 @@ namespace HotelManagement_ADO.BS_Layer
         {
             return db.ExecuteQueryDataSet("Select * from Service", CommandType.Text);
         }
-        public bool AddService(int serID, int book_ID, int customerID, int product_ID, double Price, int Amount, DateTime Buy_Date, ref string err)
+        public bool AddService(int book_ID, int customerID, int product_ID, double Price, int Amount, DateTime Buy_Date, ref string err)
         {
             try
             {
-                string sql = $"exec SP_ADD_SERVICE '{book_ID}', '{customerID}', '{product_ID}', '{Price}', '{Amount}', '{Buy_Date}";
+                string sql = $"exec SP_ADD_SERVICE '{book_ID}', '{customerID}', '{product_ID}', '{Price}', '{Amount}', '{Buy_Date}'";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace HotelManagement_ADO.BS_Layer
         {
             try
             {
-                string sql = $"exec SP_DELETE_SERVICE '{serID}";
+                string sql = $"exec SP_DELETE_SERVICE '{serID}'";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)
