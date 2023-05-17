@@ -16,7 +16,8 @@ namespace HotelManagement_ADO.Interface
     public partial class InteractionInterface : Form
     {
 
-
+        public string StoredUsername { get; set; }
+        public int Role { get; set; }
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
@@ -28,6 +29,7 @@ namespace HotelManagement_ADO.Interface
         {
             InitializeComponent();
             AllocConsole();
+            SetUserDetails(StoredUsername,Role);
         }
 
         private void openChildForm(Form childForm)
@@ -99,6 +101,18 @@ namespace HotelManagement_ADO.Interface
         private void checkOutBtn_Click(object sender, EventArgs e)
         {
             openChildForm(new CheckOut());
+        }
+        public void SetUserDetails(string storedUsername, int role)
+        {
+            lbUserID.Text = storedUsername;
+            if(role == 1)
+            {
+                lbRole.Text = "Admin";
+            }
+            else if(role == 2)
+            {
+                lbRole.Text = "Employee";
+            }
         }
     }
 }

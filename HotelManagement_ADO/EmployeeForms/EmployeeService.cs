@@ -25,8 +25,10 @@ namespace HotelManagement_ADO.EmployeeForms
         {
             InitializeComponent();
             database = new DBMain();
+
            LoadDataAvai();
             this.btnAddService.Enabled = false;
+
 
         }
         void LoadDataAvai()
@@ -105,7 +107,7 @@ namespace HotelManagement_ADO.EmployeeForms
             try
             {
                 BLService dbSE = new BLService();
-                dbSE.DeleteService(ref err,Convert.ToInt32(dgvBookedServices.Rows[rBooked].Cells[2].Value.ToString()));
+                dbSE.DeleteService(ref err, Convert.ToInt32(dgvBookedServices.Rows[rBooked].Cells[2].Value.ToString()));
                 LoadDataAvai();
                 LoadDataBooked();
             }
@@ -118,25 +120,6 @@ namespace HotelManagement_ADO.EmployeeForms
         private void dgvBookedServices_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             rBooked = dgvBookedServices.CurrentCell.RowIndex;
-        }
-        public class ServiceModel
-        {
-            [DisplayName("Service ID")]
-            public int serID { get; set; }
-
-            [DisplayName("Customer Name")]
-            public string Fullname { get; set; }
-
-            [DisplayName("Product Name")]
-            public string ProductName { get; set; }
-
-            [DisplayName("Booking ID")]
-            public int book_ID { get; set; }
-            public int Amount { get; set; }
-            public double Price { get; set; }
-
-            [DisplayName("Buy Date")]
-            public DateTime Buy_Date { get; set; }
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
