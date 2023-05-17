@@ -17,7 +17,8 @@ namespace HotelManagement_ADO.EmployeeForms
         string err;
         int rAvai;
         int rBooked;
-        int customerID;
+        int customerID = -1;
+        string name;
 
         DBMain database = null;
         public EmployeeService()
@@ -41,23 +42,21 @@ namespace HotelManagement_ADO.EmployeeForms
         }
         void LoadDataBooked()
         {
-            if (txtName.Text != null)
+            
+            var proc = database.ExecuteQueryDataSet($"Exec Sp_FindServiceByName N'{name}'", CommandType.Text);
+            DataTable dataTable = proc.Tables[0];
+            dgvBookedServices.DataSource = dataTable;
+            dgvBookedServices.ColumnHeadersHeight = 30;
+            if (dataTable.Rows.Count > 0)
             {
-
-                string name = txtName.Text;
-                //var pro = qlhotelEntity.Database.ExecuteSqlCommand($"Exec FindServiceByName N'{name}'");
-                var proc = database.ExecuteQueryDataSet($"Exec Sp_FindServiceByName N'{name}'", CommandType.Text);
-                DataTable dataTable = proc.Tables[0];
-                dgvBookedServices.DataSource = dataTable;
-                dgvBookedServices.ColumnHeadersHeight = 30;
+                customerID = ReturnCustomerID(txtName.Text);
                 dgvBookedServices.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvBookedServices_CellClick(null, null);
             }
-        }
-        private void findBtn_Click(object sender, EventArgs e)
-        {
-            LoadDataBooked();
-            customerID = ReturnCustomerID(txtName.Text);
+            else
+            {
+                dataTable.Clear();
+            }
         }
 
         private void btnAddService_Click(object sender, EventArgs e)
@@ -96,7 +95,7 @@ namespace HotelManagement_ADO.EmployeeForms
                 }
             }
 
-            return 0;
+            return -1;
         }
 
         private void btnDeleteService_Click(object sender, EventArgs e)
@@ -119,5 +118,10 @@ namespace HotelManagement_ADO.EmployeeForms
             rBooked = dgvBookedServices.CurrentCell.RowIndex;
         }
 
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            name = txtName.Text;
+            LoadDataBooked();
+        }
     }
 }
