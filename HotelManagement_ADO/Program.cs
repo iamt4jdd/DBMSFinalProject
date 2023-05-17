@@ -22,7 +22,10 @@ namespace HotelManagement_ADO
 
 
             //Application.Run(new InteractionInterface());
-            Application.Run(new FormLogin());
+
+            //Application.Run(new EmployeeService());
+            Application.Run(new Customers());
+
 
 
         }
