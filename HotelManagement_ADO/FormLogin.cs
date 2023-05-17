@@ -13,6 +13,7 @@ using HotelManagement_ADO.Interface;
 using HotelManagement_ADO.DB_Layer;
 using HotelManagement_ADO.BS_Layer;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using HotelManagement_ADO.AdminForms;
 
 namespace HotelManagement_ADO
 {
@@ -30,9 +31,13 @@ namespace HotelManagement_ADO
             string password = userPassword.Text;
             if (Login.CheckLogin(username, password))
             {
-                InteractionInterface inter = new InteractionInterface();
+                //InteractionInterface inter = new InteractionInterface();
+                //this.Hide();
+                //inter.ShowDialog();
+                //this.Show();
+                UserDetail bkdt = new UserDetail();
                 this.Hide();
-                inter.ShowDialog();
+                bkdt.ShowDialog();
                 this.Show();
             }
             else
