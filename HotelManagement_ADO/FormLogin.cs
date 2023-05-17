@@ -27,7 +27,7 @@ namespace HotelManagement_ADO
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = email.Text;
-            string password = passwordUser.Text;
+            string password = userPassword.Text;
             if (Login.CheckLogin(username, password))
             {
                 InteractionInterface inter = new InteractionInterface();
