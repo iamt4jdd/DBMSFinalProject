@@ -71,12 +71,6 @@
     <Compile Include="AdminForms\BookingDetail.Designer.cs">
       <DependentUpon>BookingDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminForms\Category.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminForms\Category.Designer.cs">
-      <DependentUpon>Category.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminForms\Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +165,42 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminForms\Booking.resx">
       <DependentUpon>Booking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\BookingDetail.resx">
+      <DependentUpon>BookingDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\Customers.resx">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\Role.resx">
+      <DependentUpon>Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\Room.resx">
+      <DependentUpon>Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\Service.resx">
+      <DependentUpon>Service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\UserDetail.resx">
+      <DependentUpon>UserDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForms\CheckOut.resx">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForms\EmployeeBooking.resx">
+      <DependentUpon>EmployeeBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForms\EmployeeService.resx">
+      <DependentUpon>EmployeeService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForms\Receipt.resx">
+      <DependentUpon>Receipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
