@@ -35,7 +35,7 @@ namespace HotelManagement_ADO.AdminForms
                 this.cbGender.ResetText();
                 this.txtPhoneNo.ResetText();
                 this.txtAdd.ResetText();
-                this.txtIDCard.ResetText();
+                this.txtIdentifyNumber.ResetText();
 
                 // Không cho thao tác trên các nút Lưu / Hủy
                 this.btnSave.Enabled = false;
@@ -61,13 +61,15 @@ namespace HotelManagement_ADO.AdminForms
             // Kich hoạt biến Them
             Them = true;
             // Xóa trống các đối tượng trong Panel
-            this.txtCID.ResetText();
+            int newCID = Convert.ToInt32(dgvCUSTOMERS.Rows[dgvCUSTOMERS.Rows.Count - 2].Cells[0].Value) + 1;
+
+            this.txtCID.Text = newCID.ToString();
             this.txtFullName.ResetText();
             this.dtpBirthday.ResetText();
             this.cbGender.ResetText();
             this.txtPhoneNo.ResetText();
             this.txtAdd.ResetText();
-            this.txtIDCard.ResetText();
+            this.txtIdentifyNumber.ResetText();
             // Cho thao tác trên các nút Lưu / Hủy / Panel
             this.btnSave.Enabled = true;
             this.btnCancel.Enabled = true;
@@ -86,7 +88,7 @@ namespace HotelManagement_ADO.AdminForms
             Them = false;
             // Cho phép thao tác trên Panel
             this.panel.Enabled = true;
-            dgvCUSTOMERS_CellClick(null, null);
+   
             // Cho thao tác trên các nút Lưu / Hủy / Panel
             this.btnSave.Enabled = true;
             this.btnCancel.Enabled = true;
@@ -98,7 +100,9 @@ namespace HotelManagement_ADO.AdminForms
 
             // Đưa con trỏ đến TextField txtbook_ID
             this.txtCID.Enabled = false;
-            this.txtIDCard.Focus();
+            this.txtIdentifyNumber.Focus();
+
+            dgvCUSTOMERS_CellClick(null, null);
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -158,7 +162,7 @@ namespace HotelManagement_ADO.AdminForms
             this.cbGender.ResetText();
             this.txtPhoneNo.ResetText();
             this.txtAdd.ResetText();
-            this.txtIDCard.ResetText();
+            this.txtIdentifyNumber.ResetText();
             // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
             this.btnAdd.Enabled = true;
             this.btnUpdate.Enabled = true;
@@ -186,7 +190,7 @@ namespace HotelManagement_ADO.AdminForms
                     gen,
                     this.txtPhoneNo.Text,
                     this.txtAdd.Text,
-                    this.txtIDCard.Text, ref err))
+                    this.txtIdentifyNumber.Text, ref err))
                     MessageBox.Show("Add successfully");
                 LoadData();
             }
@@ -204,7 +208,7 @@ namespace HotelManagement_ADO.AdminForms
                     gen,                  
                     this.txtPhoneNo.Text,
                     this.txtAdd.Text,
-                    this.txtIDCard.Text, ref err))
+                    this.txtIdentifyNumber.Text, ref err))
                     MessageBox.Show("Add successfully");
                 LoadData();
                 // Load lại dữ liệu trên DataGridView
@@ -223,9 +227,9 @@ namespace HotelManagement_ADO.AdminForms
             this.txtFullName.Text = dgvCUSTOMERS.Rows[r].Cells[1].Value.ToString();
             this.dtpBirthday.Text = dgvCUSTOMERS.Rows[r].Cells[2].Value.ToString();
             this.cbGender.Text = dgvCUSTOMERS.Rows[r].Cells[3].Value.ToString();
-            this.txtPhoneNo.Text = dgvCUSTOMERS.Rows[r].Cells[5].Value.ToString();
-            this.txtAdd.Text = dgvCUSTOMERS.Rows[r].Cells[6].Value.ToString();
-            this.txtIDCard.Text = dgvCUSTOMERS.Rows[r].Cells[7].Value.ToString();
+            this.txtPhoneNo.Text = dgvCUSTOMERS.Rows[r].Cells[4].Value.ToString();
+            this.txtAdd.Text = dgvCUSTOMERS.Rows[r].Cells[5].Value.ToString();
+            this.txtIdentifyNumber.Text = dgvCUSTOMERS.Rows[r].Cells[6].Value.ToString();
         }
         private void FormCustomers_Load(object sender, EventArgs e)
         {

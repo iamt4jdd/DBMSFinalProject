@@ -22,7 +22,7 @@ namespace HotelManagement_ADO
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new FormLogin());
-            Application.Run(new EmployeeBooking());
+            Application.Run(new InteractionInterface());
             //Application.Run(new EmployeeService());
 
 

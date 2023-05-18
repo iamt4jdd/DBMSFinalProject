@@ -102,7 +102,7 @@ namespace HotelManagement_ADO.EmployeeForms
         {
             rAvai = dgvCustomer.CurrentCell.RowIndex;
             this.txtCName.Text = dgvCustomer.Rows[rAvai].Cells[1].Value.ToString();
-            this.txtRoom.Text = dgvCustomer.Rows[rAvai].Cells[4].Value.ToString();
+            this.txtRoom.Text = dgvCustomer.Rows[rAvai].Cells[5].Value.ToString();
             currentBookingID = Convert.ToInt32(dgvCustomer.Rows[rAvai].Cells[0].Value);
             currentCustomerID = Convert.ToInt32(dgvCustomer.Rows[rAvai].Cells[1].Value);
             DateTime checkIn = DateTime.Parse(dgvCustomer.Rows[rAvai].Cells[6].Value.ToString());

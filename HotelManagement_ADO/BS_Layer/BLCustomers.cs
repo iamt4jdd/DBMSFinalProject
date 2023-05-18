@@ -21,11 +21,11 @@ namespace HotelManagement_ADO.BS_Layer
             return db.ExecuteQueryDataSet("SELECT * FROM Customers", CommandType.Text);
         }
 
-        public bool AddCustomers(string name, DateTime birth, bool gender, string phoneNo, string address, string idCard, ref string err)
+        public bool AddCustomers(string name, DateTime birth, bool gender, string phoneNo, string address, string identify_number, ref string err)
         {
             try
             {
-                string sql = $"EXEC SP_ADD_CUSTOMERS '{name}', '{birth.Date.ToString()}', '{gender}', '{phoneNo}', '{address}', '{idCard}'";
+                string sql = $"EXEC SP_ADD_CUSTOMERS '{name}', '{birth.Date.ToString()}', '{gender}', '{phoneNo}', '{address}', '{identify_number}'";
                 db.MyExecuteNonQuery(sql);
                 return true;
             }
@@ -51,11 +51,11 @@ namespace HotelManagement_ADO.BS_Layer
             }
         }
 
-        public bool UpdateCustomers(int cID, string name, DateTime birth, bool gender, string phoneNo, string address, string idCard, ref string err)
+        public bool UpdateCustomers(int cID, string name, DateTime birth, bool gender, string phoneNo, string address, string identify_number, ref string err)
         {
             try
             {
-                string sql = $"EXEC SP_UPDATE_CUSTOMERS '{cID}', '{name}', '{birth.Date}', '{gender}', '{phoneNo}', '{address}', '{idCard}'";
+                string sql = $"EXEC SP_UPDATE_CUSTOMERS '{cID}', '{name}', '{birth.Date}', '{gender}', '{phoneNo}', '{address}', '{identify_number}'";
                 db.MyExecuteNonQuery(sql);
                 return true;
             }
