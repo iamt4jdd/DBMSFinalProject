@@ -33,7 +33,6 @@ namespace HotelManagement_ADO.AdminForms
                 this.txtFullName.ResetText();
                 this.dtpBirthday.ResetText();
                 this.cbGender.ResetText();
-                this.txtEmail.ResetText();
                 this.txtPhoneNo.ResetText();
                 this.txtAdd.ResetText();
                 this.txtIDCard.ResetText();
@@ -66,7 +65,6 @@ namespace HotelManagement_ADO.AdminForms
             this.txtFullName.ResetText();
             this.dtpBirthday.ResetText();
             this.cbGender.ResetText();
-            this.txtEmail.ResetText();
             this.txtPhoneNo.ResetText();
             this.txtAdd.ResetText();
             this.txtIDCard.ResetText();
@@ -158,7 +156,6 @@ namespace HotelManagement_ADO.AdminForms
             this.txtFullName.ResetText();
             this.dtpBirthday.ResetText();
             this.cbGender.ResetText();
-            this.txtEmail.ResetText();
             this.txtPhoneNo.ResetText();
             this.txtAdd.ResetText();
             this.txtIDCard.ResetText();
@@ -187,7 +184,6 @@ namespace HotelManagement_ADO.AdminForms
                     this.txtFullName.Text,
                     this.dtpBirthday.Value,
                     gen,
-                    this.txtEmail.Text,
                     this.txtPhoneNo.Text,
                     this.txtAdd.Text,
                     this.txtIDCard.Text, ref err))
@@ -205,8 +201,7 @@ namespace HotelManagement_ADO.AdminForms
                     Convert.ToInt32(this.txtCID.Text),
                     this.txtFullName.Text,
                     DateTime.Parse(this.dtpBirthday.Text),
-                    gen,
-                    this.txtEmail.Text,
+                    gen,                  
                     this.txtPhoneNo.Text,
                     this.txtAdd.Text,
                     this.txtIDCard.Text, ref err))
@@ -228,7 +223,6 @@ namespace HotelManagement_ADO.AdminForms
             this.txtFullName.Text = dgvCUSTOMERS.Rows[r].Cells[1].Value.ToString();
             this.dtpBirthday.Text = dgvCUSTOMERS.Rows[r].Cells[2].Value.ToString();
             this.cbGender.Text = dgvCUSTOMERS.Rows[r].Cells[3].Value.ToString();
-            this.txtEmail.Text = dgvCUSTOMERS.Rows[r].Cells[4].Value.ToString();
             this.txtPhoneNo.Text = dgvCUSTOMERS.Rows[r].Cells[5].Value.ToString();
             this.txtAdd.Text = dgvCUSTOMERS.Rows[r].Cells[6].Value.ToString();
             this.txtIDCard.Text = dgvCUSTOMERS.Rows[r].Cells[7].Value.ToString();
