@@ -41,7 +41,7 @@ namespace HotelManagement_ADO.EmployeeForms
                 DataTable table = dataSet.Tables[0];
                 if (table.Rows.Count > 0)
                 {
-                   
+
                     DataRow row = table.Rows[0];
 
                     txtCustomer.Text = row["CustomerName"].ToString();
@@ -86,5 +86,5 @@ namespace HotelManagement_ADO.EmployeeForms
                 }
             }
         }
-
+    }
 }

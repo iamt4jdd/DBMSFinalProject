@@ -57,7 +57,7 @@ namespace HotelManagement_ADO.Interface
 
         private void userDetailBtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new UserDetail());
+            openChildForm(new CustomerDetail());
         }
 
         private void bookingDetailBtn_Click(object sender, EventArgs e)
