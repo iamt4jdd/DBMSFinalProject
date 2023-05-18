@@ -31,11 +31,11 @@ namespace HotelManagement_ADO
             string username = email.Text;
             string password = userPassword.Text;
 
-            if (Login.CheckLogin(username, password, out string storedUsername, out int role))
+            if (Login.CheckLogin(username, password, out string storedUsername, out int role, out string fullName))
             {
                 InteractionInterface inter = new InteractionInterface();
                 this.Hide();
-                inter.SetUserDetails(storedUsername, role);
+                inter.SetUserDetails(storedUsername, role, fullName);
                 inter.ShowDialog();
   
             }
