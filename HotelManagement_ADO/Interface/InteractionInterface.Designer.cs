@@ -389,23 +389,23 @@
             // lbRole
             // 
             this.lbRole.AutoSize = true;
-            this.lbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRole.ForeColor = System.Drawing.Color.MistyRose;
-            this.lbRole.Location = new System.Drawing.Point(80, 140);
+            this.lbRole.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRole.ForeColor = System.Drawing.Color.White;
+            this.lbRole.Location = new System.Drawing.Point(87, 140);
             this.lbRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbRole.Name = "lbRole";
-            this.lbRole.Size = new System.Drawing.Size(0, 26);
+            this.lbRole.Size = new System.Drawing.Size(0, 23);
             this.lbRole.TabIndex = 3;
             // 
             // lbUserID
             // 
             this.lbUserID.AutoSize = true;
-            this.lbUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserID.ForeColor = System.Drawing.Color.MistyRose;
-            this.lbUserID.Location = new System.Drawing.Point(135, 100);
+            this.lbUserID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUserID.ForeColor = System.Drawing.Color.White;
+            this.lbUserID.Location = new System.Drawing.Point(160, 100);
             this.lbUserID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUserID.Name = "lbUserID";
-            this.lbUserID.Size = new System.Drawing.Size(0, 26);
+            this.lbUserID.Size = new System.Drawing.Size(0, 23);
             this.lbUserID.TabIndex = 2;
             // 
             // label2

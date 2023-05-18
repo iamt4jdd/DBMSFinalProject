@@ -86,6 +86,9 @@
             // listView1
             // 
             this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(59, 313);
             this.listView1.Name = "listView1";

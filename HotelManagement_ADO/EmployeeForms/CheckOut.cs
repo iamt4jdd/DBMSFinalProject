@@ -17,6 +17,7 @@ namespace HotelManagement_ADO.EmployeeForms
     {
         int rAvai;
         int currentCustomerID;
+        int currentBookingID;
 
         DBMain database = null;
         Receipt formReceipt = null;
@@ -50,12 +51,14 @@ namespace HotelManagement_ADO.EmployeeForms
             dgvCustomer.DataSource = dataTable;
             dgvCustomer.AutoGenerateColumns = true;
             dgvCustomer.ColumnHeadersHeight = 30;
-            dgvCustomer.Columns[0].HeaderText = "Customer ID";
-            dgvCustomer.Columns[1].HeaderText = "Customer Name";
-            dgvCustomer.Columns[3].HeaderText = "Phone Number";
-            dgvCustomer.Columns[4].HeaderText = "Room Number";
-            dgvCustomer.Columns[5].HeaderText = "Check In Date";
-            dgvCustomer.Columns[6].HeaderText = "Check Out Date";
+            dgvCustomer.Columns[0].HeaderText = "Booking ID";
+            dgvCustomer.Columns[1].HeaderText = "Customer ID";
+            dgvCustomer.Columns[2].HeaderText = "Customer Name";
+            dgvCustomer.Columns[3].HeaderText = "Identify Number";
+            dgvCustomer.Columns[4].HeaderText = "Phone Number";
+            dgvCustomer.Columns[5].HeaderText = "Room Number";
+            dgvCustomer.Columns[6].HeaderText = "Check In Date";
+            dgvCustomer.Columns[7].HeaderText = "Check Out Date";
             dgvCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
@@ -64,7 +67,7 @@ namespace HotelManagement_ADO.EmployeeForms
         {
            if(currentCustomerID != 0)
            {
-                var checkOutDataSet = database.ExecuteQueryDataSet($"Select * from GetCustomerReceipt('{currentCustomerID}')", CommandType.Text);
+                var checkOutDataSet = database.ExecuteQueryDataSet($"Select * from GetCustomerReceipt('{currentBookingID}', '{currentCustomerID}')", CommandType.Text);
                 //Console.WriteLine(checkOutDataSet);
                 formReceipt = new Receipt();
                 formReceipt.currentCustomerID = currentCustomerID;
@@ -100,10 +103,10 @@ namespace HotelManagement_ADO.EmployeeForms
             rAvai = dgvCustomer.CurrentCell.RowIndex;
             this.txtCName.Text = dgvCustomer.Rows[rAvai].Cells[1].Value.ToString();
             this.txtRoom.Text = dgvCustomer.Rows[rAvai].Cells[4].Value.ToString();
-            currentCustomerID = Convert.ToInt32(dgvCustomer.Rows[rAvai].Cells[0].Value);
-       
-            DateTime checkIn = DateTime.Parse(dgvCustomer.Rows[rAvai].Cells[5].Value.ToString());
-            DateTime checkOut = DateTime.Parse(dgvCustomer.Rows[rAvai].Cells[6].Value.ToString());
+            currentBookingID = Convert.ToInt32(dgvCustomer.Rows[rAvai].Cells[0].Value);
+            currentCustomerID = Convert.ToInt32(dgvCustomer.Rows[rAvai].Cells[1].Value);
+            DateTime checkIn = DateTime.Parse(dgvCustomer.Rows[rAvai].Cells[6].Value.ToString());
+            DateTime checkOut = DateTime.Parse(dgvCustomer.Rows[rAvai].Cells[7].Value.ToString());
             TimeSpan duration = checkOut - checkIn;
             this.txtStayingDays.Text = duration.Days.ToString() + " Days";
         }
