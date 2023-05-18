@@ -9,22 +9,22 @@ using HotelManagement_ADO.DB_Layer;
 
 namespace HotelManagement_ADO.BS_Layer
 {
-    public class BLUserDetail
+    public class BLCustomerDetail
     {
         DBMain db = null;
-        public BLUserDetail()
+        public BLCustomerDetail()
         {
             db = new DBMain();
         }
-        public DataSet TakeUserDetail()
+        public DataSet TakeCustomerDetail()
         {
-            return db.ExecuteQueryDataSet("Select * from UserDetail", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select * from CustomerDetail", CommandType.Text);
         }
-        public bool AddUserDetail(int book_ID, int room_ID, int customerID, ref string err)
+        public bool AddCustomerDetail(int book_ID, int room_ID, int customerID, ref string err)
         {
             try
             {
-                string sql = $"exec SP_ADD_USER_DETAIL '{book_ID}', '{room_ID}', '{customerID}";
+                string sql = $"exec SP_ADD_CUSTOMER_DETAIL '{book_ID}', '{room_ID}', '{customerID}";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)
@@ -35,11 +35,11 @@ namespace HotelManagement_ADO.BS_Layer
             return true;
 
         }
-        public bool DeleteUserDetail(ref string err, int book_ID, int room_ID, int customerID)
+        public bool DeleteCustomerDetail(ref string err, int book_ID, int room_ID, int customerID)
         {
             try
             {
-                string sql = $"exec SP_DELETE_USER_DETAIL '{book_ID}', '{room_ID}', '{customerID}";
+                string sql = $"exec SP_DELETE_CUSTOMER_DETAIL '{book_ID}', '{room_ID}', '{customerID}";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)

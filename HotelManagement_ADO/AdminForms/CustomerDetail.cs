@@ -11,12 +11,12 @@ using HotelManagement_ADO.BS_Layer;
 
 namespace HotelManagement_ADO.AdminForms
 {
-    public partial class UserDetail : Form
+    public partial class CustomerDetail : Form
     {
         bool Them;
         string err;
-        BLUserDetail dbUD = new BLUserDetail();
-        public UserDetail()
+        BLCustomerDetail dbCD = new BLCustomerDetail();
+        public CustomerDetail()
         {
             InitializeComponent();
         }
@@ -27,16 +27,16 @@ namespace HotelManagement_ADO.AdminForms
             {
 
                 // Đưa dữ liệu lên DataGridView
-                DataSet dataSet = dbUD.TakeUserDetail();
+                DataSet dataSet = dbCD.TakeCustomerDetail();
                 DataTable dataTable = dataSet.Tables[0];
-                dgvUSERDETAIL.DataSource = dataTable;
+                dgvCUSTOMERDETAIL.DataSource = dataTable;
 
                 // Change the column name
                 dataTable.Columns["book_ID"].ColumnName = "Booking ID";
                 dataTable.Columns["room_ID"].ColumnName = "Room ID";
                 dataTable.Columns["customerID"].ColumnName = "Customer ID";
                 // Set the DataSource of the DataGridView
-                dgvUSERDETAIL.DataSource = dataTable;
+                dgvCUSTOMERDETAIL.DataSource = dataTable;
                 // Xóa trống các đối tượng trong Panel
                 this.txtbook_ID.ResetText();
                 this.txtroom_ID.ResetText();
@@ -50,14 +50,14 @@ namespace HotelManagement_ADO.AdminForms
                 this.btnDelete.Enabled = true;
 
                 //
-                dgvUSERDETAIL_CellClick(null, null);
+                dgvCUSTOMERDETAIL_CellClick(null, null);
             }
             catch
             {
-                MessageBox.Show("Không lấy được nội dung trong table USERDETAIL. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong table CUSTOMERDETAIL. Lỗi rồi!!!");
             }
         }
-        private void FormUserDetail_Load(object sender, EventArgs e)
+        private void FormCustomerDetail_Load(object sender, EventArgs e)
         {
             LoadData();
         }
@@ -86,17 +86,17 @@ namespace HotelManagement_ADO.AdminForms
             // Đưa con trỏ đến TextField txtbook_ID
             this.txtbook_ID.Focus();
         }
-        private void dgvUSERDETAIL_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCUSTOMERDETAIL_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Thứ tự dòng hiện hành
-            int r = dgvUSERDETAIL.CurrentCell.RowIndex;
+            int r = dgvCUSTOMERDETAIL.CurrentCell.RowIndex;
             // Chuyển thông tin lên panel
             this.txtbook_ID.Text =
-            dgvUSERDETAIL.Rows[r].Cells[0].Value.ToString();
+            dgvCUSTOMERDETAIL.Rows[r].Cells[0].Value.ToString();
             this.txtroom_ID.Text =
-            dgvUSERDETAIL.Rows[r].Cells[1].Value.ToString();
+            dgvCUSTOMERDETAIL.Rows[r].Cells[1].Value.ToString();
             this.txtcustomerID.Text =
-            dgvUSERDETAIL.Rows[r].Cells[2].Value.ToString();
+            dgvCUSTOMERDETAIL.Rows[r].Cells[2].Value.ToString();
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -122,7 +122,7 @@ namespace HotelManagement_ADO.AdminForms
             this.btnSave.Enabled = false;
             this.btnCancel.Enabled = false;
             this.panel.Enabled = false;
-            dgvUSERDETAIL_CellClick(null, null);
+            dgvCUSTOMERDETAIL_CellClick(null, null);
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -130,8 +130,8 @@ namespace HotelManagement_ADO.AdminForms
             // Thêm dữ liệu
             if (Them)
             {
-                BLUserDetail blUd = new BLUserDetail();
-                if (blUd.AddUserDetail(Convert.ToInt32(this.txtbook_ID.Text), Convert.ToInt32(this.txtroom_ID.Text), Convert.ToInt32(this.txtcustomerID.Text), ref err))
+                BLCustomerDetail blCD = new BLCustomerDetail();
+                if (blCD.AddCustomerDetail(Convert.ToInt32(this.txtbook_ID.Text), Convert.ToInt32(this.txtroom_ID.Text), Convert.ToInt32(this.txtcustomerID.Text), ref err))
                     MessageBox.Show("Add successfully!");
                 LoadData();
             }

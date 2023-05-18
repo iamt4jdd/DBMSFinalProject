@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement_ADO.AdminForms;
+using HotelManagement_ADO.BS_Layer;
 using HotelManagement_ADO.EmployeeForms;
 using HotelManagement_ADO.Interface;
 
@@ -21,7 +22,7 @@ namespace HotelManagement_ADO
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new FormLogin());
-            Application.Run(new InteractionInterface());
+            Application.Run(new EmployeeBooking());
             //Application.Run(new EmployeeService());
 
 
