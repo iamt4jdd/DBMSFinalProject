@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -41,7 +42,7 @@ namespace HotelManagement_ADO.EmployeeForms
                 DataTable table = dataSet.Tables[0];
                 if (table.Rows.Count > 0)
                 {
-                   
+
                     DataRow row = table.Rows[0];
 
                     txtCustomer.Text = row["CustomerName"].ToString();
@@ -80,11 +81,23 @@ namespace HotelManagement_ADO.EmployeeForms
 
                     listView1.Items.Add(roomBookingItem);
 
-                    //var checkOutPriceDataSet = database.ExecuteQueryDataSet($"Select * from Fn_CalculateTotalForCheckOut('{currentBookingID}')", CommandType.Text);
-                    //DataTable checkOutPrice = checkOutPriceDataSet.Tables[0];
-                    //txtTotal.Text = checkOutPrice.ToString();
+                    decimal totalMoney = 0;
+
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        decimal serviceTotal = Convert.ToDecimal(item.SubItems[3].Text);
+                        totalMoney += serviceTotal;
+                    }
+                    totalMoney += totalRoomBooking;
+
+                    txtTotal.Text = totalMoney.ToString();
+
+
                 }
             }
         }
 
+       
+
+    }
 }
