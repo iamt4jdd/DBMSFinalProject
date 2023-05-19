@@ -17,7 +17,7 @@ namespace HotelManagement_ADO.DB_Layer
         SqlDataAdapter da = null;
         public static string username, password;
 
-        public static string ConnStr = "Data Source=DESKTOP-EP66OTM\\MSSQLSERVER01;Initial Catalog=HotelManagementSystem;Integrated Security=True";
+        public static string ConnStr = "Data Source=localhost;Initial Catalog=HotelManagementSystem;Integrated Security=True";
 
         public DBMain()
         {
@@ -35,12 +35,15 @@ namespace HotelManagement_ADO.DB_Layer
             if (conn.State == ConnectionState.Open)
                 conn.Close();
             conn.Open();
-            comm.CommandText = strSQL;
-            comm.CommandType = ct;
-            da = new SqlDataAdapter(comm);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            return ds;
+            using (SqlCommand comm = new SqlCommand(strSQL, conn))
+            {
+                comm.CommandType = ct;
+                SqlDataAdapter da = new SqlDataAdapter(comm);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
+
         }
 
         public DataSet ExecuteQueryDataSet2(string strSQL, CommandType ct, SqlParameter parameter = null)
