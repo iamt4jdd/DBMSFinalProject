@@ -80,7 +80,7 @@ namespace HotelManagement_ADO.EmployeeForms
 
             if (!string.IsNullOrEmpty(name))
             {
-                string pro = $"EXEC FindCustomerByName '{name}'";
+                string pro = $"EXEC SP_FindCustomerByName N'{name}'";
                 using (DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text))
                 {
                     DataTable dataTable = dataSet.Tables[0];
@@ -89,7 +89,7 @@ namespace HotelManagement_ADO.EmployeeForms
             }
             else if (!string.IsNullOrEmpty(id))
             {
-                string pro = $"EXEC FindCustomerByIDC '{id}'";
+                string pro = $"EXEC SP_FindCustomerByIDC '{id}'";
                 using (DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text))
                 {
                     DataTable dataTable = dataSet.Tables[0];
