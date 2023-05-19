@@ -18,7 +18,7 @@ namespace HotelManagement_ADO.BS_Layer
         }
         public DataSet TakeService()
         {
-            return db.ExecuteQueryDataSet("Select * from Service", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select * from View_Service", CommandType.Text);
         }
         public bool AddService(int book_ID, int customerID, int product_ID, double Price, int Amount, DateTime Buy_Date, ref string err)
         {

@@ -18,7 +18,7 @@ namespace HotelManagement_ADO.BS_Layer
         }
         public DataSet TakeBookingDetail()
         {
-            return db.ExecuteQueryDataSet("Select * from BookingDetail", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select * from View_BookingDetail", CommandType.Text);
         }
         public bool AddBookingDetail(int book_ID, int room_ID, double Price, int Unit, ref string err)
         {

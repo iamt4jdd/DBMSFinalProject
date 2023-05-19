@@ -19,7 +19,7 @@ namespace HotelManagement_ADO.BS_Layer
         }
         public DataSet TakeRoom()
         {
-            return db.ExecuteQueryDataSet("Select * from Room", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select * from View_Room", CommandType.Text);
         }
 
         public DataSet FindRoom(string Room_no)

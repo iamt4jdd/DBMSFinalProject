@@ -19,7 +19,7 @@ namespace HotelManagement_ADO.BS_Layer
         }
         public DataSet TakeUser()
         {
-            return db.ExecuteQueryDataSet("Select * from Users", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select * from View_Users", CommandType.Text);
         }
         public DataSet FindUser(int ID, string Name)
         {

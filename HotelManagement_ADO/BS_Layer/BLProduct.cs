@@ -19,7 +19,7 @@ namespace HotelManagement_ADO.BS_Layer
         }
         public DataSet TakeProduct()
         {
-            return db.ExecuteQueryDataSet("Select * from Product", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select * from View_Product", CommandType.Text);
         }
         public bool AddProduct(int pID, int cate_ID, string Title, string Thumbnail, string Decription, double Price, int Amount, ref string err)
         {

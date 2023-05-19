@@ -18,7 +18,7 @@ namespace HotelManagement_ADO.BS_Layer
         }
         public DataSet TakeCustomerDetail()
         {
-            return db.ExecuteQueryDataSet("Select * from CustomerDetail", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select * from View_CustomerDetail", CommandType.Text);
         }
         public bool AddCustomerDetail(int book_ID, int room_ID, int customerID, ref string err)
         {
