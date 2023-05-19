@@ -80,17 +80,21 @@ namespace HotelManagement_ADO.EmployeeForms
 
             if (!string.IsNullOrEmpty(name))
             {
-                string pro = $"EXEC FindCustomerByName '{name}";
-                DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text);
-                DataTable dataTable = dataSet.Tables[0];
-                dgvBookedRoom.DataSource = dataTable;
+                string pro = $"EXEC FindCustomerByName '{name}'";
+                using (DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text))
+                {
+                    DataTable dataTable = dataSet.Tables[0];
+                    dgvBookedRoom.DataSource = dataTable;
+                }
             }
             else if (!string.IsNullOrEmpty(id))
             {
-                string pro = $"EXEC FindCustomerByIDC '{id}', '";
-                DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text);
-                DataTable dataTable = dataSet.Tables[0];
-                dgvBookedRoom.DataSource = dataTable;
+                string pro = $"EXEC FindCustomerByIDC '{id}'";
+                using (DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text))
+                {
+                    DataTable dataTable = dataSet.Tables[0];
+                    dgvBookedRoom.DataSource = dataTable;
+                }
             }
             dgvBookedRoom.AutoGenerateColumns = true;
             dgvBookedRoom.ColumnHeadersHeight = 30;
