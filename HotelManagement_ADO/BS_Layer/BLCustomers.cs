@@ -25,7 +25,8 @@ namespace HotelManagement_ADO.BS_Layer
         {
             try
             {
-                string sql = $"EXEC SP_ADD_CUSTOMERS N'{name}', '{birth.Date.ToString()}', '{gender}', '{phoneNo}', N'{address}', '{identify_number}'";
+                string genderValue = gender ? "1" : "0";
+                string sql = $"EXEC SP_ADD_CUSTOMERS N'{name}', '{birth.Date}', '{genderValue}', '{phoneNo}', N'{address}', '{identify_number}'";
                 db.MyExecuteNonQuery(sql);
                 return true;
             }
@@ -35,7 +36,6 @@ namespace HotelManagement_ADO.BS_Layer
                 return false;
             }
         }
-
         public bool DeleteCustomers(ref string err, int cID)
         {
             try
@@ -50,12 +50,12 @@ namespace HotelManagement_ADO.BS_Layer
                 return false;
             }
         }
-
         public bool UpdateCustomers(int cID, string name, DateTime birth, bool gender, string phoneNo, string address, string identify_number, ref string err)
         {
             try
             {
-                string sql = $"EXEC SP_UPDATE_CUSTOMERS '{cID}', N'{name}', '{birth.Date}', '{gender}', '{phoneNo}', N'{address}', '{identify_number}'";
+                string genderValue = gender ? "1" : "0";
+                string sql = $"EXEC SP_UPDATE_CUSTOMERS '{cID}', N'{name}', '{birth.Date}', '{genderValue}', '{phoneNo}', N'{address}', '{identify_number}'";
                 db.MyExecuteNonQuery(sql);
                 return true;
             }

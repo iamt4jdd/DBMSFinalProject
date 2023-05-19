@@ -32,12 +32,12 @@ namespace HotelManagement_ADO.BS_Layer
             return db.ExecuteQueryDataSet3(query, CommandType.Text, parameters);
         }
 
-
         public bool AddUser(int userID, string Fullname, string password, DateTime Birthday, bool Gender, string Email, string Phone_Number, string Address, int role_id, ref string err)
         {
             try
             {
-                string sql = $"exec SP_ADD_USER N'{Fullname}', '{Birthday.ToString()}', '{Gender}', '{Email}', '{Phone_Number}', N'{Address}', {role_id}, '{password}'";
+                string genderValue = Gender ? "1" : "0";
+                string sql = $"exec SP_ADD_USER N'{Fullname}', '{Birthday.ToString()}', '{genderValue}', '{Email}', '{Phone_Number}', '{Address}', {role_id}, '{password}'";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)
@@ -62,19 +62,20 @@ namespace HotelManagement_ADO.BS_Layer
             }
             return true;
         }
-        public bool UpdateUser(int userID, string Fullname, string password, DateTime Birthday, bool Gender, string Email, string Phone_Number, string Address, int role_id, ref string err)
+        public bool UpdateUser(int userID, string fullName, string password, DateTime birthday, bool gender, string email, string phoneNumber, string address, int roleID, ref string err)
         {
             try
             {
-                string sql = $"exec SP_UPDATE_USER {userID}, N'{Fullname}', '{Birthday.ToString()}', '{Gender}', '{Email}', '{Phone_Number}', N'{Address}', {role_id}, '{password}'";
+                string genderValue = gender ? "1" : "0";
+                string sql = $"EXEC SP_UPDATE_USER {userID}, N'{fullName}', '{birthday.ToString()}', '{genderValue}', '{email}', '{phoneNumber}', '{address}', {roleID}, '{password}'";
                 db.MyExecuteNonQuery(sql);
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.InnerException.Message);
                 return false;
             }
-            return true;
         }
     }
 }
