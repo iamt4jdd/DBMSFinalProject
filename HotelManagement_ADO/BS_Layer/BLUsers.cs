@@ -37,7 +37,7 @@ namespace HotelManagement_ADO.BS_Layer
         {
             try
             {
-                string sql = $"exec SP_ADD_USER N'{Fullname}', '{Birthday.ToString()}', '{Gender}', '{Email}', '{Phone_Number}', '{Address}', {role_id}, '{password}'";
+                string sql = $"exec SP_ADD_USER N'{Fullname}', '{Birthday.ToString()}', '{Gender}', '{Email}', '{Phone_Number}', N'{Address}', {role_id}, '{password}'";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)
@@ -66,7 +66,7 @@ namespace HotelManagement_ADO.BS_Layer
         {
             try
             {
-                string sql = $"exec SP_UPDATE_USER {userID}, N'{Fullname}', '{Birthday.ToString()}', '{Gender}', '{Email}', '{Phone_Number}', '{Address}', {role_id}, '{password}'";
+                string sql = $"exec SP_UPDATE_USER {userID}, N'{Fullname}', '{Birthday.ToString()}', '{Gender}', '{Email}', '{Phone_Number}', N'{Address}', {role_id}, '{password}'";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)

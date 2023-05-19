@@ -28,9 +28,9 @@ namespace HotelManagement_ADO.EmployeeForms
             listView1.View = View.Details;
             listView1.HeaderStyle = ColumnHeaderStyle.None;
             listView1.Scrollable = false;
-            listView1.Columns.Add("Product Name", 220);
-            listView1.Columns.Add("Product Price", 180);
-            listView1.Columns.Add("Service Quantity", 140);
+            listView1.Columns.Add("Product Name", 170);
+            listView1.Columns.Add("Product Price", 150);
+            listView1.Columns.Add("Service Quantity", 100);
             listView1.Columns.Add("Service Total", 100);
 
         }

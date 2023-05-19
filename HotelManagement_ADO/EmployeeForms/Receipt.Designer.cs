@@ -78,9 +78,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(59, 570);
+            this.panel1.Location = new System.Drawing.Point(59, 591);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(620, 1);
+            this.panel1.Size = new System.Drawing.Size(660, 1);
             this.panel1.TabIndex = 107;
             // 
             // listView1
@@ -90,9 +90,9 @@
             this.listView1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(59, 313);
+            this.listView1.Location = new System.Drawing.Point(59, 331);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(620, 236);
+            this.listView1.Size = new System.Drawing.Size(660, 236);
             this.listView1.TabIndex = 117;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -203,9 +203,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(59, 292);
+            this.panel2.Location = new System.Drawing.Point(59, 309);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(620, 1);
+            this.panel2.Size = new System.Drawing.Size(660, 1);
             this.panel2.TabIndex = 106;
             // 
             // label8

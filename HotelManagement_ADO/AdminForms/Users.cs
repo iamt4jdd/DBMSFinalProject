@@ -20,6 +20,7 @@ namespace HotelManagement_ADO.AdminForms
         public Users()
         {
             InitializeComponent();
+            
         }
 
         void LoadData()
@@ -63,7 +64,7 @@ namespace HotelManagement_ADO.AdminForms
             this.btnAdd.Enabled = true;
             this.btnFix.Enabled = true;
             this.btnDelete.Enabled = true;
-
+            
             //
             dgvUSER_CellClick(null, null);
         }
@@ -188,6 +189,7 @@ namespace HotelManagement_ADO.AdminForms
         {
             // Mở kết nối
             // Thêm dữ liệu
+            Console.WriteLine(cbGender.Text);
             if (Them)
             {
                 bool gen = false;
