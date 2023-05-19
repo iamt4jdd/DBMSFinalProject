@@ -24,63 +24,57 @@ namespace HotelManagement_ADO.AdminForms
 
         void LoadData()
         {
-            try
+
+            // Đưa dữ liệu lên DataGridView
+            if (bsearch)
             {
-                // Đưa dữ liệu lên DataGridView
-                if (bsearch)
-                {
-                    DataSet dataSet = dbU.FindUser(Convert.ToInt32(textID.Text), textName.Text);
-                    DataTable dataTable = dataSet.Tables[0];
-                    dgvUSER.DataSource = dataTable;
-                    bsearch = false;
-                }
-                else
-                {
-                    DataSet dataSet = dbU.TakeUser();
-                    DataTable dataTable = dataSet.Tables[0];
-                    dgvUSER.DataSource = dataTable;
-                    dataTable.Columns["userID"].ColumnName = "ID of User";
-                    dataTable.Columns["Fullname"].ColumnName = "Fullname";
-                    dataTable.Columns["Birthday"].ColumnName = "Birthday";
-                    dataTable.Columns["Gender"].ColumnName = "Gender";
-                    dataTable.Columns["Email"].ColumnName = "Email";
-                    dataTable.Columns["Phone_Number"].ColumnName = "Phone Number";
-                    dataTable.Columns["Address"].ColumnName = "Address";
-                    dataTable.Columns["role_id"].ColumnName = "Role ID";
-                    dataTable.Columns["password"].ColumnName = "Password";
-                    dgvUSER.DataSource = dataTable;
-                    dgvUSER.AutoResizeColumns();
-
-                }
-                //// Thay đổi độ rộng cột
-                //dgvUSER.AutoResizeColumns();
-
-                // Xóa trống các đối tượng trong Panel
-                this.txtuserID.ResetText();
-                this.txtFullname.ResetText();
-                this.txtPassword.ResetText();
-                this.dtpBirthday.ResetText();
-                this.txtGender.ResetText();
-                this.txtEmail.ResetText();
-                this.txtPhone_Number.ResetText();
-                this.txtAddress.ResetText();
-                this.txtrole_id.ResetText();
-                // Không cho thao tác trên các nút Lưu / Hủy
-                this.btnSave.Enabled = false;
-                this.btnCancel.Enabled = false;
-                this.panel.Enabled = false;
-                // Cho thao tác trên các nút Thêm / Sửa / Xóa /Thoát
-                this.btnAdd.Enabled = true;
-                this.btnFix.Enabled = true;
-                this.btnDelete.Enabled = true;
-
-                //
-                dgvUSER_CellClick(null, null);
+                DataSet dataSet = dbU.FindUser(Convert.ToInt32(textID.Text), textName.Text);
+                DataTable dataTable = dataSet.Tables[0];
+                dgvUSER.DataSource = dataTable;
+                bsearch = false;
             }
-            catch
+            else
             {
-                MessageBox.Show("Không lấy được nội dung trong table USER. Lỗi rồi!!!");
+                DataSet dataSet = dbU.TakeUser();
+                DataTable dataTable = dataSet.Tables[0];
+                dgvUSER.DataSource = dataTable;
+                dataTable.Columns["userID"].ColumnName = "ID of User";
+                dataTable.Columns["Fullname"].ColumnName = "Fullname";
+                dataTable.Columns["Birthday"].ColumnName = "Birthday";
+                dataTable.Columns["Gender"].ColumnName = "Gender";
+                dataTable.Columns["Email"].ColumnName = "Email";
+                dataTable.Columns["Phone_Number"].ColumnName = "Phone Number";
+                dataTable.Columns["Address"].ColumnName = "Address";
+                dataTable.Columns["role_id"].ColumnName = "Role ID";
+                dataTable.Columns["password"].ColumnName = "Password";
+                dgvUSER.DataSource = dataTable;
+                dgvUSER.AutoResizeColumns();
+
             }
+            //// Thay đổi độ rộng cột
+            //dgvUSER.AutoResizeColumns();
+
+            // Xóa trống các đối tượng trong Panel
+            this.txtuserID.ResetText();
+            this.txtFullname.ResetText();
+            this.txtPassword.ResetText();
+            this.dtpBirthday.ResetText();
+            this.txtGender.ResetText();
+            this.txtEmail.ResetText();
+            this.txtPhone_Number.ResetText();
+            this.txtAddress.ResetText();
+            this.txtrole_id.ResetText();
+            // Không cho thao tác trên các nút Lưu / Hủy
+            this.btnSave.Enabled = false;
+            this.btnCancel.Enabled = false;
+            this.panel.Enabled = false;
+            // Cho thao tác trên các nút Thêm / Sửa / Xóa /Thoát
+            this.btnAdd.Enabled = true;
+            this.btnFix.Enabled = true;
+            this.btnDelete.Enabled = true;
+
+            //
+            dgvUSER_CellClick(null, null);
         }
         private void FromUser_Load(object sender, EventArgs e)
         {

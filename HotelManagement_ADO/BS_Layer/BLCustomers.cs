@@ -18,7 +18,7 @@ namespace HotelManagement_ADO.BS_Layer
         }
         public DataSet TakeCustomers()
         {
-            return db.ExecuteQueryDataSet("SELECT * FROM Customers", CommandType.Text);
+            return db.ExecuteQueryDataSet("SELECT * FROM View_Customers", CommandType.Text);
         }
 
         public bool AddCustomers(string name, DateTime birth, bool gender, string phoneNo, string address, string identify_number, ref string err)
