@@ -24,7 +24,7 @@ namespace HotelManagement_ADO.BS_Layer
         {
             try
             {
-                string sql = $"exec SP_ADD_SERVICE '{book_ID}', '{customerID}', '{product_ID}', '{Price}', '{Amount}', '{Buy_Date}'";
+                string sql = $"exec SP_ADD_SERVICE {book_ID}, {customerID}, {product_ID}, {Price}, {Amount}, '{Buy_Date.ToString()}'";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)
@@ -53,7 +53,7 @@ namespace HotelManagement_ADO.BS_Layer
         {
             try
             {
-                string sql = $"exec SP_UPDATE_SERVICE '{serID}', '{book_ID}', '{customerID}', '{product_ID}', '{Price}', '{Price}', '{Amount}', '{Buy_Date}";
+                string sql = $"exec SP_UPDATE_SERVICE {serID}, {book_ID}, {customerID}, {product_ID}, {Price}, {Amount}, '{Buy_Date.ToString()}'";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)

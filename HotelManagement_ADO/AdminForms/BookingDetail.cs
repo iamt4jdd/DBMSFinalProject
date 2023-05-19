@@ -66,7 +66,7 @@ namespace HotelManagement_ADO.AdminForms
         private void btnAdd_Click(object sender, EventArgs e)
         {
             this.txtbook_ID.Enabled = true;
-
+            this.txtroom_ID.Enabled = true;
             // Kich hoạt biến Them
             Them = true;
             // Xóa trống các đối tượng trong Panel

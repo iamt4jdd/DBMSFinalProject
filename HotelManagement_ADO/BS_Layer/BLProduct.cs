@@ -25,7 +25,7 @@ namespace HotelManagement_ADO.BS_Layer
         {
             try
             {
-                string sql = $"exec SP_ADD_PRODUCT '{cate_ID}', '{Title}', '{Thumbnail}', '{Decription}', '{Price}', '{Amount}";
+                string sql = $"exec SP_ADD_PRODUCT {cate_ID}, '{Title}', '{Thumbnail}', '{Decription}', {Price}, {Amount}";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)
@@ -40,7 +40,7 @@ namespace HotelManagement_ADO.BS_Layer
         {
             try
             {
-                string sql = $"exec SP_DELETE_PRODUCT '{pID}";
+                string sql = $"exec SP_DELETE_PRODUCT {pID}";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace HotelManagement_ADO.BS_Layer
         {
             try
             {
-                string sql = $"exec SP_UPDATE_PRODUCT '{pID}', '{cate_ID}', '{Title}', '{Thumbnail}', '{Decription}', '{Price}', '{Amount}";
+                string sql = $"exec SP_UPDATE_PRODUCT {pID}, {cate_ID}, '{Title}', '{Thumbnail}', '{Decription}', {Price}, {Amount}";
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex)

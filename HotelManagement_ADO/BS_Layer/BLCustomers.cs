@@ -25,7 +25,7 @@ namespace HotelManagement_ADO.BS_Layer
         {
             try
             {
-                string sql = $"EXEC SP_ADD_CUSTOMERS '{name}', '{birth.Date.ToString()}', '{gender}', '{phoneNo}', '{address}', '{identify_number}'";
+                string sql = $"EXEC SP_ADD_CUSTOMERS N'{name}', '{birth.Date.ToString()}', '{gender}', '{phoneNo}', N'{address}', '{identify_number}'";
                 db.MyExecuteNonQuery(sql);
                 return true;
             }
@@ -55,7 +55,7 @@ namespace HotelManagement_ADO.BS_Layer
         {
             try
             {
-                string sql = $"EXEC SP_UPDATE_CUSTOMERS '{cID}', '{name}', '{birth.Date}', '{gender}', '{phoneNo}', '{address}', '{identify_number}'";
+                string sql = $"EXEC SP_UPDATE_CUSTOMERS '{cID}', N'{name}', '{birth.Date}', '{gender}', '{phoneNo}', N'{address}', '{identify_number}'";
                 db.MyExecuteNonQuery(sql);
                 return true;
             }

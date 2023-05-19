@@ -209,7 +209,6 @@ namespace HotelManagement_ADO.AdminForms
                     this.txtPhoneNo.Text,
                     this.txtAdd.Text,
                     this.txtIdentifyNumber.Text, ref err))
-                    MessageBox.Show("Add successfully");
                 LoadData();
                 // Load lại dữ liệu trên DataGridView
                 LoadData();

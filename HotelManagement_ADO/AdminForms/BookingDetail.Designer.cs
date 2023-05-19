@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvBOOKINGDETAIL = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtUnit = new System.Windows.Forms.TextBox();
@@ -55,9 +55,10 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(1079, 547);
+            this.btnSave.Location = new System.Drawing.Point(1439, 673);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(110, 40);
+            this.btnSave.Size = new System.Drawing.Size(147, 49);
             this.btnSave.TabIndex = 134;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -67,34 +68,35 @@
             // 
             this.dgvBOOKINGDETAIL.AllowUserToResizeColumns = false;
             this.dgvBOOKINGDETAIL.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvBOOKINGDETAIL.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvBOOKINGDETAIL.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvBOOKINGDETAIL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBOOKINGDETAIL.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBOOKINGDETAIL.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvBOOKINGDETAIL.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBOOKINGDETAIL.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBOOKINGDETAIL.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBOOKINGDETAIL.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvBOOKINGDETAIL.Location = new System.Drawing.Point(394, 115);
-            this.dgvBOOKINGDETAIL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvBOOKINGDETAIL.Location = new System.Drawing.Point(525, 142);
+            this.dgvBOOKINGDETAIL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvBOOKINGDETAIL.Name = "dgvBOOKINGDETAIL";
+            this.dgvBOOKINGDETAIL.ReadOnly = true;
             this.dgvBOOKINGDETAIL.RowHeadersVisible = false;
             this.dgvBOOKINGDETAIL.RowHeadersWidth = 51;
             this.dgvBOOKINGDETAIL.RowTemplate.Height = 24;
-            this.dgvBOOKINGDETAIL.Size = new System.Drawing.Size(777, 359);
+            this.dgvBOOKINGDETAIL.Size = new System.Drawing.Size(1036, 442);
             this.dgvBOOKINGDETAIL.TabIndex = 139;
             this.dgvBOOKINGDETAIL.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBOOKINGDETAIL.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -109,7 +111,7 @@
             this.dgvBOOKINGDETAIL.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvBOOKINGDETAIL.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvBOOKINGDETAIL.ThemeStyle.HeaderStyle.Height = 30;
-            this.dgvBOOKINGDETAIL.ThemeStyle.ReadOnly = false;
+            this.dgvBOOKINGDETAIL.ThemeStyle.ReadOnly = true;
             this.dgvBOOKINGDETAIL.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBOOKINGDETAIL.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBOOKINGDETAIL.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,9 +124,10 @@
             // txtUnit
             // 
             this.txtUnit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnit.Location = new System.Drawing.Point(147, 244);
+            this.txtUnit.Location = new System.Drawing.Point(196, 300);
+            this.txtUnit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(136, 26);
+            this.txtUnit.Size = new System.Drawing.Size(180, 30);
             this.txtUnit.TabIndex = 9;
             // 
             // label2
@@ -133,26 +136,29 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(76, 244);
+            this.label2.Location = new System.Drawing.Point(101, 300);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 20);
+            this.label2.Size = new System.Drawing.Size(50, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "Unit";
             // 
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(147, 187);
+            this.txtPrice.Location = new System.Drawing.Point(196, 230);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(136, 26);
+            this.txtPrice.Size = new System.Drawing.Size(180, 30);
             this.txtPrice.TabIndex = 7;
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(956, 547);
+            this.btnCancel.Location = new System.Drawing.Point(1275, 673);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(110, 40);
+            this.btnCancel.Size = new System.Drawing.Size(147, 49);
             this.btnCancel.TabIndex = 135;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -169,9 +175,10 @@
             this.panel.Controls.Add(this.label1);
             this.panel.Controls.Add(this.txtbook_ID);
             this.panel.Controls.Add(this.lb1);
-            this.panel.Location = new System.Drawing.Point(47, 115);
+            this.panel.Location = new System.Drawing.Point(63, 142);
+            this.panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(327, 359);
+            this.panel.Size = new System.Drawing.Size(436, 442);
             this.panel.TabIndex = 138;
             // 
             // label3
@@ -180,18 +187,20 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(67, 188);
+            this.label3.Location = new System.Drawing.Point(89, 231);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 20);
+            this.label3.Size = new System.Drawing.Size(61, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Price";
             // 
             // txtroom_ID
             // 
             this.txtroom_ID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtroom_ID.Location = new System.Drawing.Point(147, 130);
+            this.txtroom_ID.Location = new System.Drawing.Point(196, 160);
+            this.txtroom_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtroom_ID.Name = "txtroom_ID";
-            this.txtroom_ID.Size = new System.Drawing.Size(136, 26);
+            this.txtroom_ID.Size = new System.Drawing.Size(180, 30);
             this.txtroom_ID.TabIndex = 5;
             // 
             // label1
@@ -200,19 +209,20 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(40, 130);
+            this.label1.Location = new System.Drawing.Point(53, 160);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.Size = new System.Drawing.Size(94, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Room ID";
             // 
             // txtbook_ID
             // 
             this.txtbook_ID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbook_ID.Location = new System.Drawing.Point(147, 73);
+            this.txtbook_ID.Location = new System.Drawing.Point(196, 90);
+            this.txtbook_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbook_ID.Name = "txtbook_ID";
-            this.txtbook_ID.ReadOnly = true;
-            this.txtbook_ID.Size = new System.Drawing.Size(136, 26);
+            this.txtbook_ID.Size = new System.Drawing.Size(180, 30);
             this.txtbook_ID.TabIndex = 2;
             // 
             // lb1
@@ -221,18 +231,20 @@
             this.lb1.BackColor = System.Drawing.Color.Transparent;
             this.lb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb1.ForeColor = System.Drawing.Color.White;
-            this.lb1.Location = new System.Drawing.Point(26, 73);
+            this.lb1.Location = new System.Drawing.Point(35, 90);
+            this.lb1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(98, 20);
+            this.lb1.Size = new System.Drawing.Size(117, 25);
             this.lb1.TabIndex = 0;
             this.lb1.Text = "Booking ID";
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(29, 547);
+            this.btnAdd.Location = new System.Drawing.Point(39, 673);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(110, 40);
+            this.btnAdd.Size = new System.Drawing.Size(147, 49);
             this.btnAdd.TabIndex = 132;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -241,9 +253,10 @@
             // btnReload
             // 
             this.btnReload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(468, 547);
+            this.btnReload.Location = new System.Drawing.Point(624, 673);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(110, 40);
+            this.btnReload.Size = new System.Drawing.Size(147, 49);
             this.btnReload.TabIndex = 131;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
@@ -252,9 +265,10 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(298, 547);
+            this.btnDelete.Location = new System.Drawing.Point(397, 673);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(110, 40);
+            this.btnDelete.Size = new System.Drawing.Size(147, 49);
             this.btnDelete.TabIndex = 136;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -263,9 +277,10 @@
             // btnFix
             // 
             this.btnFix.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFix.Location = new System.Drawing.Point(164, 547);
+            this.btnFix.Location = new System.Drawing.Point(219, 673);
+            this.btnFix.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFix.Name = "btnFix";
-            this.btnFix.Size = new System.Drawing.Size(110, 40);
+            this.btnFix.Size = new System.Drawing.Size(147, 49);
             this.btnFix.TabIndex = 133;
             this.btnFix.Text = "Update";
             this.btnFix.UseVisualStyleBackColor = true;
@@ -274,9 +289,10 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(584, 547);
+            this.btnBack.Location = new System.Drawing.Point(779, 673);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(110, 40);
+            this.btnBack.Size = new System.Drawing.Size(147, 49);
             this.btnBack.TabIndex = 137;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -284,10 +300,10 @@
             // 
             // BookingDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1218, 701);
+            this.ClientSize = new System.Drawing.Size(1624, 863);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dgvBOOKINGDETAIL);
             this.Controls.Add(this.btnCancel);
@@ -297,7 +313,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnFix);
             this.Controls.Add(this.btnBack);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BookingDetail";
             this.Text = "BookingDetail";
             this.Load += new System.EventHandler(this.FormBookingDetail_Load);

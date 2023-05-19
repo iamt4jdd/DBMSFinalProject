@@ -50,7 +50,7 @@ namespace HotelManagement_ADO.AdminForms
             this.txtFullname.ResetText();
             this.txtPassword.ResetText();
             this.dtpBirthday.ResetText();
-            this.txtGender.ResetText();
+            this.cbGender.ResetText();
             this.txtEmail.ResetText();
             this.txtPhone_Number.ResetText();
             this.txtAddress.ResetText();
@@ -89,7 +89,7 @@ namespace HotelManagement_ADO.AdminForms
             this.txtFullname.ResetText();
             this.txtPassword.ResetText();
             this.dtpBirthday.ResetText();
-            this.txtGender.ResetText();
+            this.cbGender.ResetText();
             this.txtEmail.ResetText();
             this.txtPhone_Number.ResetText();
             this.txtAddress.ResetText();
@@ -138,7 +138,7 @@ namespace HotelManagement_ADO.AdminForms
             dgvUSER.Rows[r].Cells[1].Value.ToString();
             this.dtpBirthday.Text =
             dgvUSER.Rows[r].Cells[2].Value.ToString();
-            this.txtGender.Text =
+            this.cbGender.Text =
             dgvUSER.Rows[r].Cells[3].Value.ToString();
             this.txtEmail.Text =
             dgvUSER.Rows[r].Cells[4].Value.ToString();
@@ -168,7 +168,7 @@ namespace HotelManagement_ADO.AdminForms
             this.txtFullname.ResetText();
             this.txtPassword.ResetText();
             this.dtpBirthday.ResetText();
-            this.txtGender.ResetText();
+            this.cbGender.ResetText();
             this.txtEmail.ResetText();
             this.txtPhone_Number.ResetText();
             this.txtAddress.ResetText();
@@ -190,16 +190,22 @@ namespace HotelManagement_ADO.AdminForms
             // Thêm dữ liệu
             if (Them)
             {
+                bool gen = false;
+                if (cbGender.Text == "Male")
+                    gen = true;
                 BLUsers blU = new BLUsers();
-                if (blU.AddUser(Convert.ToInt32(this.txtuserID.Text), this.txtFullname.Text, this.txtPassword.Text, this.dtpBirthday.Value, bool.Parse(this.txtGender.Text), this.txtEmail.Text, this.txtPhone_Number.Text, this.txtAddress.Text, Convert.ToInt32(this.txtrole_id.Text), ref err))
+                if (blU.AddUser(Convert.ToInt32(this.txtuserID.Text), this.txtFullname.Text, this.txtPassword.Text, this.dtpBirthday.Value, gen, this.txtEmail.Text, this.txtPhone_Number.Text, this.txtAddress.Text, Convert.ToInt32(this.txtrole_id.Text), ref err))
                     MessageBox.Show("Add successfully!");
                 LoadData();
             }
             else
             {
+                bool gen = false;
+                if (cbGender.Text == "Male")
+                    gen = true;
                 // Thực hiện lệnh
                 BLUsers blU = new BLUsers();
-                blU.UpdateUser(Convert.ToInt32(this.txtuserID.Text), this.txtFullname.Text, this.txtPassword.Text, this.dtpBirthday.Value, bool.Parse(this.txtGender.Text), this.txtEmail.Text, this.txtPhone_Number.Text, this.txtAddress.Text, Convert.ToInt32(this.txtrole_id.Text), ref err);
+                blU.UpdateUser(Convert.ToInt32(this.txtuserID.Text), this.txtFullname.Text, this.txtPassword.Text, this.dtpBirthday.Value, gen, this.txtEmail.Text, this.txtPhone_Number.Text, this.txtAddress.Text, Convert.ToInt32(this.txtrole_id.Text), ref err);
                 // Load lại dữ liệu trên DataGridView
                 LoadData();
                 // Thông báo

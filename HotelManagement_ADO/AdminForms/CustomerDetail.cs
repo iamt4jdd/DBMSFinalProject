@@ -136,7 +136,43 @@ namespace HotelManagement_ADO.AdminForms
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                // Thực hiện lệnh
+                // Lấy thứ tự record hiện hành
+                int r = dgvCUSTOMERDETAIL.CurrentCell.RowIndex;
+                string strBD1 =
+                dgvCUSTOMERDETAIL.Rows[r].Cells[0].Value.ToString();
+                string strBD2 =
+                dgvCUSTOMERDETAIL.Rows[r].Cells[1].Value.ToString();
+                string strBD3 =
+                dgvCUSTOMERDETAIL.Rows[r].Cells[2].Value.ToString();
+                // Viết câu lệnh SQL
+                // Hiện thông báo xác nhận việc xóa mẫu tin
+                // Khai báo biến traloi
+                DialogResult traloi;
+                // Hiện hộp thoại hỏi đáp
+                traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Kiểm tra có nhắp chọn nút Ok không?
+                if (traloi == DialogResult.Yes)
+                {
+                    dbCD.DeleteCustomerDetail(ref err, Convert.ToInt32(strBD1), Convert.ToInt32(strBD2), Convert.ToInt32(strBD3));
+                    // Cập nhật lại DataGridView
+                    LoadData();
+                    // Thông báo
+                    MessageBox.Show("Đã xóa xong!");
+                }
+                else
+                {
+                    // Thông báo
+                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không xóa được. Lỗi rồi!");
+            }
         }
     }
 }

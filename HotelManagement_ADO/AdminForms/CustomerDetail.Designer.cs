@@ -45,7 +45,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.dgvCUSTOMERDETAIL = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.updateBtn = new System.Windows.Forms.Button();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCUSTOMERDETAIL)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +53,7 @@
             // 
             this.btnReload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.Location = new System.Drawing.Point(683, 647);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(4);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(147, 49);
             this.btnReload.TabIndex = 141;
@@ -65,8 +64,8 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(447, 647);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Location = new System.Drawing.Point(388, 647);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(147, 49);
             this.btnDelete.TabIndex = 145;
@@ -84,7 +83,7 @@
             this.panel.Controls.Add(this.txtbook_ID);
             this.panel.Controls.Add(this.lb1);
             this.panel.Location = new System.Drawing.Point(104, 167);
-            this.panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel.Margin = new System.Windows.Forms.Padding(4);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(471, 442);
             this.panel.TabIndex = 147;
@@ -93,7 +92,7 @@
             // 
             this.txtcustomerID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcustomerID.Location = new System.Drawing.Point(251, 281);
-            this.txtcustomerID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcustomerID.Margin = new System.Windows.Forms.Padding(4);
             this.txtcustomerID.Name = "txtcustomerID";
             this.txtcustomerID.Size = new System.Drawing.Size(180, 30);
             this.txtcustomerID.TabIndex = 7;
@@ -115,7 +114,7 @@
             // 
             this.txtroom_ID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtroom_ID.Location = new System.Drawing.Point(251, 199);
-            this.txtroom_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtroom_ID.Margin = new System.Windows.Forms.Padding(4);
             this.txtroom_ID.Name = "txtroom_ID";
             this.txtroom_ID.Size = new System.Drawing.Size(180, 30);
             this.txtroom_ID.TabIndex = 5;
@@ -137,7 +136,7 @@
             // 
             this.txtbook_ID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbook_ID.Location = new System.Drawing.Point(251, 121);
-            this.txtbook_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbook_ID.Margin = new System.Windows.Forms.Padding(4);
             this.txtbook_ID.Name = "txtbook_ID";
             this.txtbook_ID.Size = new System.Drawing.Size(180, 30);
             this.txtbook_ID.TabIndex = 2;
@@ -159,7 +158,7 @@
             // 
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(99, 647);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(147, 49);
             this.btnAdd.TabIndex = 142;
@@ -171,7 +170,7 @@
             // 
             this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(856, 647);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(147, 49);
             this.btnBack.TabIndex = 146;
@@ -183,7 +182,7 @@
             // 
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(1379, 647);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(147, 49);
             this.btnSave.TabIndex = 143;
@@ -195,7 +194,7 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(1195, 647);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(147, 49);
             this.btnCancel.TabIndex = 144;
@@ -228,6 +227,7 @@
             this.dgvCUSTOMERDETAIL.Location = new System.Drawing.Point(655, 167);
             this.dgvCUSTOMERDETAIL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCUSTOMERDETAIL.Name = "dgvCUSTOMERDETAIL";
+            this.dgvCUSTOMERDETAIL.ReadOnly = true;
             this.dgvCUSTOMERDETAIL.RowHeadersVisible = false;
             this.dgvCUSTOMERDETAIL.RowHeadersWidth = 51;
             this.dgvCUSTOMERDETAIL.RowTemplate.Height = 24;
@@ -246,7 +246,7 @@
             this.dgvCUSTOMERDETAIL.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvCUSTOMERDETAIL.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCUSTOMERDETAIL.ThemeStyle.HeaderStyle.Height = 30;
-            this.dgvCUSTOMERDETAIL.ThemeStyle.ReadOnly = false;
+            this.dgvCUSTOMERDETAIL.ThemeStyle.ReadOnly = true;
             this.dgvCUSTOMERDETAIL.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvCUSTOMERDETAIL.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCUSTOMERDETAIL.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,17 +255,6 @@
             this.dgvCUSTOMERDETAIL.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCUSTOMERDETAIL.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvCUSTOMERDETAIL.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCUSTOMERDETAIL_CellClick);
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.Location = new System.Drawing.Point(279, 647);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(147, 49);
-            this.updateBtn.TabIndex = 148;
-            this.updateBtn.Text = "Update";
-            this.updateBtn.UseVisualStyleBackColor = true;
             // 
             // CustomerDetail
             // 
@@ -281,7 +270,6 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dgvCUSTOMERDETAIL);
-            this.Controls.Add(this.updateBtn);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CustomerDetail";
             this.Text = "CustomerDetail";
@@ -309,6 +297,5 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private Guna.UI2.WinForms.Guna2DataGridView dgvCUSTOMERDETAIL;
-        private System.Windows.Forms.Button updateBtn;
     }
 }
