@@ -38,7 +38,7 @@ namespace HotelManagement_ADO.BS_Layer
                 if (email == username && storedPassword == password)
                 {
                     result = true;
-                    string newConnect = "Data Source=localhost;Initial Catalog=HotelManagementSystem;User ID=" + storedUsername + ";Password=" + password;
+                    string newConnect = "Data Source=DESKTOP-EP66OTM\\MSSQLSERVER01;Initial Catalog=HotelManagementSystem;User ID=" + storedUsername + ";Password=" + password;
                     DBMain.SetConnStr(newConnect, username, password);
                     break;
                 }

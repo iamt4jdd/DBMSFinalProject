@@ -43,14 +43,51 @@ namespace HotelManagement_ADO.EmployeeForms
             dgvAvaiServices.Columns[1].HeaderText = "Product Name";
             dgvAvaiServices_CellClick(null, null);
         }
+
+        //void LoadDataBooked()
+        //{
+
+        //    var proc = database.ExecuteQueryDataSet($"Exec Sp_FindServiceByName N'{name}'", CommandType.Text);
+        //    DataTable dataTable = proc.Tables[0];
+        //    dgvBookedServices.DataSource = dataTable;
+        //    dgvBookedServices.ColumnHeadersHeight = 30;
+        //    if (dataTable.Rows.Count > 0)
+        //    {
+        //        customerID = ReturnCustomerID(txtName.Text);
+        //        dgvBookedServices.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        //        dgvBookedServices_CellClick(null, null);
+        //        this.btnAddService.Enabled = true;
+        //    }
+        //    else
+        //    {
+        //        dataTable.Clear();
+        //    }
+        //}
+
         void LoadDataBooked()
         {
-            
             var proc = database.ExecuteQueryDataSet($"Exec Sp_FindServiceByName N'{name}'", CommandType.Text);
             DataTable dataTable = proc.Tables[0];
-            dgvBookedServices.DataSource = dataTable;
+            dataTable.Columns["SerID"].ColumnName = "Service ID";
+            dataTable.Columns["FullName"].ColumnName = "Customer Name";
+            dataTable.Columns["ProductName"].ColumnName = "Product Name";
+            dataTable.Columns["Book_ID"].ColumnName = "Booking ID";
+            // Create a DataView to filter and project the desired columns
+            DataView dataView = new DataView(dataTable);
+            dataView = new DataView(dataTable);
+            dataView = new DataView(dataTable);
+            dataView = new DataView(dataTable);
+            dataView = new DataView(dataTable);
+            dataView = new DataView(dataTable);
+            dataView = new DataView(dataTable);
+
+            // Set the Filter property to display only the desired columns
+            dataView.Table = dataTable.DefaultView.ToTable(false, "Service ID", "Customer Name", "Product Name", "Booking ID", "Amount", "Price");
+            
+            dgvBookedServices.DataSource = dataView;
             dgvBookedServices.ColumnHeadersHeight = 30;
-            if (dataTable.Rows.Count > 0)
+
+            if (dataView.Count > 0)
             {
                 customerID = ReturnCustomerID(txtName.Text);
                 dgvBookedServices.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -62,7 +99,6 @@ namespace HotelManagement_ADO.EmployeeForms
                 dataTable.Clear();
             }
         }
-
         private void btnAddService_Click(object sender, EventArgs e)
         {
             try
@@ -107,7 +143,7 @@ namespace HotelManagement_ADO.EmployeeForms
             try
             {
                 BLService dbSE = new BLService();
-                dbSE.DeleteService(ref err, Convert.ToInt32(dgvBookedServices.Rows[rBooked].Cells[2].Value.ToString()));
+                dbSE.DeleteService(ref err, Convert.ToInt32(dgvBookedServices.Rows[rBooked].Cells[0].Value.ToString()));
                 LoadDataAvai();
                 LoadDataBooked();
             }
