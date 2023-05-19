@@ -40,13 +40,6 @@ namespace HotelManagement_ADO.AdminForms
                     DataTable dataTable = dataSet.Tables[0];
                     dgvROOM.DataSource = dataTable;
 
-                    dataTable.Columns["roomID"].ColumnName = "ID of Room";
-                    dataTable.Columns["room_No"].ColumnName = "No of Room";
-                    dataTable.Columns["Type"].ColumnName = "Type";
-                    dataTable.Columns["Capacity"].ColumnName = "Capacity";
-                    dataTable.Columns["Price"].ColumnName = "Price";
-                    dgvROOM.DataSource = dataTable;
-
                     // Set the DataSource of the DataGridView
 
                     // Thay đổi độ rộng cột

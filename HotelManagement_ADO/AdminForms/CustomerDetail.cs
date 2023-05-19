@@ -32,9 +32,6 @@ namespace HotelManagement_ADO.AdminForms
                 dgvCUSTOMERDETAIL.DataSource = dataTable;
 
                 // Change the column name
-                dataTable.Columns["book_ID"].ColumnName = "Booking ID";
-                dataTable.Columns["room_ID"].ColumnName = "Room ID";
-                dataTable.Columns["customerID"].ColumnName = "Customer ID";
                 // Set the DataSource of the DataGridView
                 dgvCUSTOMERDETAIL.DataSource = dataTable;
                 // Xóa trống các đối tượng trong Panel

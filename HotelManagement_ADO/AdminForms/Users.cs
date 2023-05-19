@@ -37,16 +37,7 @@ namespace HotelManagement_ADO.AdminForms
             {
                 DataSet dataSet = dbU.TakeUser();
                 DataTable dataTable = dataSet.Tables[0];
-                dgvUSER.DataSource = dataTable;
-                dataTable.Columns["userID"].ColumnName = "ID of User";
-                dataTable.Columns["Fullname"].ColumnName = "Fullname";
-                dataTable.Columns["Birthday"].ColumnName = "Birthday";
-                dataTable.Columns["Gender"].ColumnName = "Gender";
-                dataTable.Columns["Email"].ColumnName = "Email";
-                dataTable.Columns["Phone_Number"].ColumnName = "Phone Number";
-                dataTable.Columns["Address"].ColumnName = "Address";
-                dataTable.Columns["role_id"].ColumnName = "Role ID";
-                dataTable.Columns["password"].ColumnName = "Password";
+
                 dgvUSER.DataSource = dataTable;
                 dgvUSER.AutoResizeColumns();
 

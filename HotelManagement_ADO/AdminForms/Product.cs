@@ -32,13 +32,6 @@ namespace HotelManagement_ADO.AdminForms
                 dgvProduct.DataSource = dataTable;
 
                 // Change the column name
-                dataTable.Columns["pID"].ColumnName = "Product ID";
-                dataTable.Columns["cate_ID"].ColumnName = "Categories ID";
-                dataTable.Columns["Title"].ColumnName = "Title";
-                dataTable.Columns["Thumbnail"].ColumnName = "Thumbnail";
-                dataTable.Columns["Decription"].ColumnName = "Description";
-                dataTable.Columns["Price"].ColumnName = "Price";
-                dataTable.Columns["Amount"].ColumnName = "Amount";
                 // Set the DataSource of the DataGridView
                 dgvProduct.DataSource = dataTable;
                 // Thay đổi độ rộng cột
