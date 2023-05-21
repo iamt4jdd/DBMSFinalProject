@@ -19,6 +19,8 @@ namespace HotelManagement_ADO.Interface
         public string StoredUsername { get; set; }
         public int Role { get; set; }
         public string FullName { get; set; }
+        public int UserID { get; set; }
+
 
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -31,7 +33,7 @@ namespace HotelManagement_ADO.Interface
         {
             InitializeComponent();
             AllocConsole();
-            SetUserDetails(StoredUsername,Role, FullName);
+            SetUserDetails(StoredUsername,Role, FullName, UserID);
         }
 
         private void openChildForm(Form childForm)
@@ -104,7 +106,7 @@ namespace HotelManagement_ADO.Interface
         {
             openChildForm(new CheckOut());
         }
-        public void SetUserDetails(string storedUsername, int role, string fullName)
+        public void SetUserDetails(string storedUsername, int role, string fullName, int UserID)
         {
             lbUserID.Text = storedUsername;
             if(role == 1)

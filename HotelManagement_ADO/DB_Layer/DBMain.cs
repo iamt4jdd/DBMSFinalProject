@@ -17,7 +17,7 @@ namespace HotelManagement_ADO.DB_Layer
         SqlDataAdapter da = null;
         public static string username, password;
 
-        public static string ConnStr = "Data Source=DESKTOP-EP66OTM\\MSSQLSERVER01;Initial Catalog=HotelManagementSystem;Integrated Security=True";
+        public static string ConnStr = "Data Source=localhost;Initial Catalog=HotelManagementSystem;Integrated Security=True";
 
         public DBMain()
         {

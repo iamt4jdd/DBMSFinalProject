@@ -20,7 +20,6 @@ namespace HotelManagement_ADO
     public partial class FormLogin : Form
     {
         BLLogin Login = new BLLogin();
-        int role;
         public FormLogin()
         {
             InitializeComponent();
@@ -31,11 +30,11 @@ namespace HotelManagement_ADO
             string username = email.Text;
             string password = userPassword.Text;
 
-            if (Login.CheckLogin(username, password, out string storedUsername, out int role, out string fullName))
+            if (Login.CheckLogin(username, password, out string storedUsername, out int role, out string fullName, out int UserID))
             {
                 InteractionInterface inter = new InteractionInterface();
                 this.Hide();
-                inter.SetUserDetails(storedUsername, role, fullName);
+                inter.SetUserDetails(storedUsername, role, fullName, UserID);
                 inter.ShowDialog();
   
             }
