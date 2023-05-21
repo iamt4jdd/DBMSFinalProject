@@ -17,13 +17,14 @@ namespace HotelManagement_ADO.BS_Layer
         {
             db = new DBMain();
         }
-        public bool CheckLogin(string username, string password, out string storedUsername, out int role, out string fullName)
+        public bool CheckLogin(string username, string password, out string storedUsername, out int role, out string fullName, out int UserID)
         {
             bool result = false;
             storedUsername = null;
             fullName = null;
             role = 0;
-            string strSql = "SELECT Email, password, role_id, Fullname FROM Users";
+            UserID = 0;
+            string strSql = "SELECT Email, password, role_id, Fullname, userID FROM Users";
             SqlDataReader read = null;
             read = db.ExecuteQueryDataReader(strSql, CommandType.Text);
 
@@ -34,11 +35,11 @@ namespace HotelManagement_ADO.BS_Layer
                 role = Convert.ToInt32(read.GetValue(2).ToString().Trim());
                 fullName = read.GetValue(3).ToString().Trim();
                 storedUsername = email.Substring(0, email.IndexOf("@"));
-
+                UserID = Convert.ToInt32(read.GetValue(4).ToString().Trim());
                 if (email == username && storedPassword == password)
                 {
                     result = true;
-                    string newConnect = "Data Source=DESKTOP-EP66OTM\\MSSQLSERVER01;Initial Catalog=HotelManagementSystem;User ID=" + storedUsername + ";Password=" + password;
+                    string newConnect = "Data Source=localhost;Initial Catalog=HotelManagementSystem;User ID=" + storedUsername + ";Password=" + password;
                     DBMain.SetConnStr(newConnect, username, password);
                     break;
                 }
