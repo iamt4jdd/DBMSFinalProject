@@ -27,7 +27,7 @@ namespace HotelManagement_ADO.EmployeeForms
         InteractionInterface interactionInterface = new InteractionInterface();
         string dateIN;
         string dateOUT;
-        int UserID;
+        int currentUserID;
         string name;
         string id;
         int customer_ID;
@@ -43,9 +43,13 @@ namespace HotelManagement_ADO.EmployeeForms
         public EmployeeBooking()
         {
             InitializeComponent();
-            UserID = interactionInterface.UserID;
+            
         }
-
+        public EmployeeBooking(int currentUserID)
+        {
+            InitializeComponent();
+            this.currentUserID = currentUserID;
+        }
         void LoadAvaiRoom()
         {
             dateIN = dtIN.Date.Year.ToString() + "-" + dtIN.Date.Month.ToString() + "-" + dtIN.Day.ToString() + " " + tIN.ToString();
@@ -114,7 +118,7 @@ namespace HotelManagement_ADO.EmployeeForms
                     BLBooking blB = new BLBooking();
                     if (blB.AddBooking(
                         book_ID,
-                        UserID,
+                        currentUserID,
                         customer_ID,
                         DateTime.Parse(dateIN),
                         DateTime.Parse(dateOUT), ref err))
@@ -152,7 +156,7 @@ namespace HotelManagement_ADO.EmployeeForms
                     BLBooking blB = new BLBooking();
                     if (blB.AddBooking(
                         book_ID,
-                        UserID, //dang tu nhap staff
+                        currentUserID, //dang tu nhap staff
                         customer_ID,
                         DateTime.Parse(dateIN),
                         DateTime.Parse(dateOUT), ref err))
@@ -191,7 +195,7 @@ namespace HotelManagement_ADO.EmployeeForms
                 BLBooking blB = new BLBooking();
                 if (blB.AddBooking(
                     book_ID,
-                    UserID, //dang tu nhap staff
+                    currentUserID, //dang tu nhap staff
                     customer_ID,
                     DateTime.Parse(dateIN),
                     DateTime.Parse(dateOUT), ref err))
@@ -281,7 +285,7 @@ namespace HotelManagement_ADO.EmployeeForms
             {
                 customer_ID = Convert.ToInt32(reader[0]);
             }
-            Console.WriteLine(customer_ID);
+     
         }
         void ReturnBookID(DateTime DateIn, DateTime DateOut)
         {
@@ -292,7 +296,7 @@ namespace HotelManagement_ADO.EmployeeForms
             {
                 book_ID = reader.GetInt32(0);
             }
-            Console.WriteLine(book_ID);
+     
         }
         void ReturnRoomID(int bookID)
         {
@@ -302,7 +306,7 @@ namespace HotelManagement_ADO.EmployeeForms
             {
                 roomID = reader.GetInt32(0);
             }
-            Console.WriteLine(roomID);
+         
         }
 
         //Check changes of common controls
