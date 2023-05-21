@@ -47,7 +47,7 @@ namespace HotelManagement_ADO.EmployeeForms
         {
             dateIN = dtIN.Date.Year.ToString() + "-" + dtIN.Date.Month.ToString() + "-" + dtIN.Day.ToString() + " " + tIN.ToString();
             dateOUT = dtOUT.Date.Year.ToString() + "-" + dtOUT.Date.Month.ToString() + "-" + dtOUT.Day.ToString() + " " + tOUT.ToString();
-            string fun = $"select * from fn_GetAvailableRooms('{DateTime.Parse(dateIN)}','{DateTime.Parse(dateOUT)}')";
+            string fun = $"select * from fn_GetAvailableRooms('{dateIN}','{dateOUT}')";
             DataSet dataSet = db.ExecuteQueryDataSet(fun, CommandType.Text);
             DataTable dataTable = dataSet.Tables[0];
             dgvAvaiRoom.DataSource = dataTable;
@@ -63,7 +63,7 @@ namespace HotelManagement_ADO.EmployeeForms
 
             if (dtpCheckInDate.Value != datecheck || dtpCheckOutDate.Value != datecheck || !string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(id))
             {
-                string fun = $"select * from fn_GetBookedRooms('{DateTime.Parse(dateIN)}','{DateTime.Parse(dateOUT)}')";
+                string fun = $"select * from fn_GetBookedRooms('{dateIN}','{dateOUT}')";
                 DataSet dataSet = db.ExecuteQueryDataSet(fun, CommandType.Text);
                 DataTable dataTable = dataSet.Tables[0];
                 dgvBookedRoom.DataSource = dataTable;
@@ -264,9 +264,9 @@ namespace HotelManagement_ADO.EmployeeForms
         //Get ID from database
         void ReturnCustomerID(string name, string id)
         {
-            string query = "SELECT cID FROM Customers WHERE Fullname = @Name AND IDCARD = @ID";
+            string query = "SELECT cID FROM Customers WHERE Fullname = @Name AND Identify_Number = @ID";
             SqlCommand command = new SqlCommand(query);
-            command.Parameters.AddWithValue("@Name", name);
+            command.Parameters.Add("@Name", SqlDbType.NVarChar).Value = name;
             command.Parameters.AddWithValue("@ID", id);
             using (SqlDataReader reader = command.ExecuteReader())
             {
