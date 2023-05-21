@@ -32,7 +32,7 @@ namespace HotelManagement_ADO
 
             if (Login.CheckLogin(username, password, out string storedUsername, out int role, out string fullName, out int UserID))
             {
-                InteractionInterface inter = new InteractionInterface();
+                InteractionInterface inter = new InteractionInterface(UserID);
                 this.Hide();
                 inter.SetUserDetails(storedUsername, role, fullName, UserID);
                 inter.ShowDialog();

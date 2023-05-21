@@ -19,7 +19,7 @@ namespace HotelManagement_ADO.Interface
         public string StoredUsername { get; set; }
         public int Role { get; set; }
         public string FullName { get; set; }
-        public int UserID { get; set; }
+        public int currentUserID { get; set; }
 
 
         [DllImport("kernel32.dll", SetLastError = true)]
@@ -33,7 +33,14 @@ namespace HotelManagement_ADO.Interface
         {
             InitializeComponent();
             AllocConsole();
-            SetUserDetails(StoredUsername,Role, FullName, UserID);
+           
+        }
+
+        public InteractionInterface(int userID)
+        {
+            InitializeComponent();
+            AllocConsole();
+            currentUserID = userID;
         }
 
         private void openChildForm(Form childForm)
@@ -94,7 +101,7 @@ namespace HotelManagement_ADO.Interface
 
         private void roomBookingBtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new EmployeeBooking());
+            openChildForm(new EmployeeBooking(currentUserID));
         }
 
         private void servicesBookingBtn_Click(object sender, EventArgs e)
@@ -118,6 +125,7 @@ namespace HotelManagement_ADO.Interface
                 lbRole.Text = "Employee";
             }
             lbName.Text = fullName;
+  
         }
     }
 }
