@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Forms;
 using HotelManagement_ADO.BS_Layer;
 using HotelManagement_ADO.DB_Layer;
+using HotelManagement_ADO.Interface;
 
 namespace HotelManagement_ADO.EmployeeForms
 {
@@ -23,9 +24,10 @@ namespace HotelManagement_ADO.EmployeeForms
         TimeSpan tIN = new TimeSpan();
         TimeSpan tOUT = new TimeSpan();
         //
+        InteractionInterface interactionInterface = new InteractionInterface();
         string dateIN;
         string dateOUT;
-
+        int UserID;
         string name;
         string id;
         int customer_ID;
@@ -41,6 +43,7 @@ namespace HotelManagement_ADO.EmployeeForms
         public EmployeeBooking()
         {
             InitializeComponent();
+            UserID = interactionInterface.UserID;
         }
 
         void LoadAvaiRoom()
@@ -111,7 +114,7 @@ namespace HotelManagement_ADO.EmployeeForms
                     BLBooking blB = new BLBooking();
                     if (blB.AddBooking(
                         book_ID,
-                        1,
+                        UserID,
                         customer_ID,
                         DateTime.Parse(dateIN),
                         DateTime.Parse(dateOUT), ref err))
@@ -149,7 +152,7 @@ namespace HotelManagement_ADO.EmployeeForms
                     BLBooking blB = new BLBooking();
                     if (blB.AddBooking(
                         book_ID,
-                        1, //dang tu nhap staff
+                        UserID, //dang tu nhap staff
                         customer_ID,
                         DateTime.Parse(dateIN),
                         DateTime.Parse(dateOUT), ref err))
@@ -188,7 +191,7 @@ namespace HotelManagement_ADO.EmployeeForms
                 BLBooking blB = new BLBooking();
                 if (blB.AddBooking(
                     book_ID,
-                    1, //dang tu nhap staff
+                    UserID, //dang tu nhap staff
                     customer_ID,
                     DateTime.Parse(dateIN),
                     DateTime.Parse(dateOUT), ref err))
