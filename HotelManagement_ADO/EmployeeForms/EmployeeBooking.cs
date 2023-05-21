@@ -125,7 +125,7 @@ namespace HotelManagement_ADO.EmployeeForms
                     // Kich hoạt biến Them
                     existAdd = true;
                     ReturnBookID(DateTime.Parse(dateIN), DateTime.Parse(dateOUT));
-                    ReturnRoomID(book_ID);
+                    //ReturnRoomID(book_ID);
                 }
                 else if (!string.IsNullOrEmpty(id) && dgvBookedRoom.Rows.Count == 0)
                 {
@@ -151,8 +151,8 @@ namespace HotelManagement_ADO.EmployeeForms
                     ReturnCustomerID(name, id);
                     BLBooking blB = new BLBooking();
                     if (blB.AddBooking(
-                        1,
-                        1, //dang tu nhap staff
+                        book_ID,
+                        UserID, //dang tu nhap staff
                         customer_ID,
                         DateTime.Parse(dateIN),
                         DateTime.Parse(dateOUT), ref err))
@@ -163,7 +163,7 @@ namespace HotelManagement_ADO.EmployeeForms
                     #endregion
 
                     ReturnBookID(DateTime.Parse(dateIN), DateTime.Parse(dateOUT));
-                    ReturnRoomID(book_ID);
+                    //ReturnRoomID(book_ID);
                 }
             }
             else if (!string.IsNullOrEmpty(name) && dgvBookedRoom.Rows.Count == 0)
@@ -190,8 +190,8 @@ namespace HotelManagement_ADO.EmployeeForms
                 ReturnCustomerID(name, id);
                 BLBooking blB = new BLBooking();
                 if (blB.AddBooking(
-                    1,
-                    1, //dang tu nhap staff
+                    book_ID,
+                    UserID, //dang tu nhap staff
                     customer_ID,
                     DateTime.Parse(dateIN),
                     DateTime.Parse(dateOUT), ref err))
@@ -202,7 +202,7 @@ namespace HotelManagement_ADO.EmployeeForms
                 #endregion
 
                 ReturnBookID(DateTime.Parse(dateIN), DateTime.Parse(dateOUT));
-                ReturnRoomID(book_ID);
+                //ReturnRoomID(book_ID);
             }
             addExistCustomer(existAdd);
             addNonExistCustomer(nonexistAdd);
@@ -220,7 +220,11 @@ namespace HotelManagement_ADO.EmployeeForms
                     Convert.ToInt32(dgvAvaiRoom.Rows[rAvai].Cells[0].Value.ToString()),
                     Convert.ToInt32(dgvAvaiRoom.Rows[rAvai].Cells[4].Value.ToString()),
                     Unit, ref err))
+                {
+                    ReturnRoomID(book_ID);
                     MessageBox.Show("Add Booking Detail successfully");
+                }
+                    
 
                 //Add data into table Customer Detail
                 BLCustomerDetail blCD = new BLCustomerDetail();
@@ -248,7 +252,11 @@ namespace HotelManagement_ADO.EmployeeForms
                     Convert.ToInt32(dgvAvaiRoom.Rows[rAvai].Cells[0].Value.ToString()),
                     Convert.ToInt32(dgvAvaiRoom.Rows[rAvai].Cells[4].Value.ToString()),
                     Unit, ref err))
+                {
+                    ReturnRoomID(book_ID);
                     MessageBox.Show("Add Booking Detail successfully");
+                }
+                   
 
                 //Add data into table Customer Detail
                 BLCustomerDetail blCD = new BLCustomerDetail();
@@ -267,45 +275,34 @@ namespace HotelManagement_ADO.EmployeeForms
         //Get ID from database
         void ReturnCustomerID(string name, string id)
         {
-            string query = "SELECT cID FROM Customers WHERE Fullname = @Name AND Identify_Number = @ID";
-            SqlCommand command = new SqlCommand(query);
-            command.Parameters.Add("@Name", SqlDbType.NVarChar).Value = name;
-            command.Parameters.AddWithValue("@ID", id);
-            using (SqlDataReader reader = command.ExecuteReader())
-            {
-                if (reader.Read())
-                {
-                    customer_ID = reader.GetInt32(0);
-                }
-            }
-        }
-        void ReturnBookID(DateTime indate, DateTime outdate)
-        {
-            string query = "SELECT bookID FROM Bookings WHERE Check_In = @CheckIn AND Check_Out = @CheckOut";
-            SqlCommand command = new SqlCommand(query);
-            command.Parameters.AddWithValue("@CheckIn", indate);
-            command.Parameters.AddWithValue("@CheckOut", outdate);
-            using (SqlDataReader reader = command.ExecuteReader())
-            {
-                if (reader.Read())
-                {
-                    book_ID = reader.GetInt32(0);
-                }
-            }
-        }
-        void ReturnRoomID(int gotbookID)
-        {
-            string query = "SELECT room_ID FROM BookingDetails WHERE book_ID = @BookID";
-            SqlCommand command = new SqlCommand(query);
-            command.Parameters.AddWithValue("@BookID", gotbookID);
+            SqlDataReader reader = db.ExecuteQueryDataReader($"SELECT cID FROM Customers WHERE Fullname = N'{name}' AND Identify_Number = '{id}'", CommandType.Text);
 
-            using (SqlDataReader reader = command.ExecuteReader())
+            while (reader.Read())
             {
-                if (reader.Read())
-                {
-                    roomID = reader.GetInt32(0);
-                }
+                customer_ID = Convert.ToInt32(reader[0]);
             }
+            Console.WriteLine(customer_ID);
+        }
+        void ReturnBookID(DateTime DateIn, DateTime DateOut)
+        {
+            SqlDataReader reader = db.ExecuteQueryDataReader($"SELECT bookID FROM Booking WHERE Check_In = '{DateIn.ToString()}' AND Check_Out = '{DateOut.ToString()}'", CommandType.Text);
+            
+
+            while (reader.Read())
+            {
+                book_ID = reader.GetInt32(0);
+            }
+            Console.WriteLine(book_ID);
+        }
+        void ReturnRoomID(int bookID)
+        {
+            SqlDataReader reader = db.ExecuteQueryDataReader($"SELECT room_ID FROM BookingDetail WHERE book_ID = {bookID}", CommandType.Text);
+            
+            while (reader.Read())
+            {
+                roomID = reader.GetInt32(0);
+            }
+            Console.WriteLine(roomID);
         }
 
         //Check changes of common controls
