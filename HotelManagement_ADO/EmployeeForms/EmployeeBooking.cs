@@ -87,7 +87,7 @@ namespace HotelManagement_ADO.EmployeeForms
 
             if (!string.IsNullOrEmpty(name))
             {
-                string pro = $"EXEC SP_FindCustomerByName N'{name}'";
+                string pro = "SELECT * FROM fn_findBookingCustomerByName('"+ name+"')";
                 using (DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text))
                 {
                     DataTable dataTable = dataSet.Tables[0];
@@ -96,7 +96,7 @@ namespace HotelManagement_ADO.EmployeeForms
             }
             else if (!string.IsNullOrEmpty(id))
             {
-                string pro = $"EXEC SP_FindCustomerByIDC '{id}'";
+                string pro = "SELECT * FROM fn_FindCustomerByIDC('"+id+"')";
                 using (DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text))
                 {
                     DataTable dataTable = dataSet.Tables[0];
