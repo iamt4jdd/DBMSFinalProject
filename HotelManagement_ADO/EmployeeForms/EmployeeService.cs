@@ -47,7 +47,7 @@ namespace HotelManagement_ADO.EmployeeForms
 
         void LoadDataBooked()
         {
-            var proc = database.ExecuteQueryDataSet($"Exec Sp_FindServiceByName N'{name}'", CommandType.Text);
+            var proc = database.ExecuteQueryDataSet("SELECT * FROM fn_FindServiceByName('"+ name+"')", CommandType.Text);
             DataTable dataTable = proc.Tables[0];
             dataTable.Columns["SerID"].ColumnName = "Service ID";
             dataTable.Columns["FullName"].ColumnName = "Customer Name";
