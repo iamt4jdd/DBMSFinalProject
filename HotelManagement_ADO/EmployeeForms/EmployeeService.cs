@@ -18,6 +18,7 @@ namespace HotelManagement_ADO.EmployeeForms
         int rAvai;
         int rBooked;
         int customerID = -1;
+        int bookID = -1;
         string name;
       
         DBMain database = null;
@@ -44,26 +45,6 @@ namespace HotelManagement_ADO.EmployeeForms
             dgvAvaiServices_CellClick(null, null);
         }
 
-        //void LoadDataBooked()
-        //{
-
-        //    var proc = database.ExecuteQueryDataSet($"Exec Sp_FindServiceByName N'{name}'", CommandType.Text);
-        //    DataTable dataTable = proc.Tables[0];
-        //    dgvBookedServices.DataSource = dataTable;
-        //    dgvBookedServices.ColumnHeadersHeight = 30;
-        //    if (dataTable.Rows.Count > 0)
-        //    {
-        //        customerID = ReturnCustomerID(txtName.Text);
-        //        dgvBookedServices.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-        //        dgvBookedServices_CellClick(null, null);
-        //        this.btnAddService.Enabled = true;
-        //    }
-        //    else
-        //    {
-        //        dataTable.Clear();
-        //    }
-        //}
-
         void LoadDataBooked()
         {
             var proc = database.ExecuteQueryDataSet($"Exec Sp_FindServiceByName N'{name}'", CommandType.Text);
@@ -86,10 +67,18 @@ namespace HotelManagement_ADO.EmployeeForms
             
             dgvBookedServices.DataSource = dataView;
             dgvBookedServices.ColumnHeadersHeight = 30;
-
+            customerID = ReturnCustomerID(txtName.Text);
+            if (customerID != -1)
+            {
+                bookID = ReturnBookID(customerID);
+                if (bookID != -1)
+                {
+                    txtBookID.Text = bookID.ToString();
+                    this.btnAddService.Enabled = true;
+                }
+            }
             if (dataView.Count > 0)
             {
-                customerID = ReturnCustomerID(txtName.Text);
                 dgvBookedServices.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvBookedServices_CellClick(null, null);
                 this.btnAddService.Enabled = true;
@@ -137,6 +126,23 @@ namespace HotelManagement_ADO.EmployeeForms
 
             return -1;
         }
+        int ReturnBookID(int cID)
+        {
+            var dataSet = database.ExecuteQueryDataSet("SELECT * FROM Booking", CommandType.Text);
+            var dataTable = dataSet.Tables[0];
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int ID = Convert.ToInt32(row["customer_ID"]);
+
+                if (ID == cID)
+                {
+                    return ID;
+                }
+            }
+
+            return -1;
+        }
 
         private void btnDeleteService_Click(object sender, EventArgs e)
         {
@@ -160,6 +166,7 @@ namespace HotelManagement_ADO.EmployeeForms
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
+            txtBookID.ResetText();
             this.btnAddService.Enabled = false;
             name = txtName.Text;
             LoadDataBooked();
