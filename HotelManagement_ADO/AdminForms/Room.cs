@@ -65,7 +65,7 @@ namespace HotelManagement_ADO.AdminForms
             }
             catch
             {
-                MessageBox.Show("Không lấy được nội dung trong table ROOM. Lỗi rồi!!!");
+                MessageBox.Show("Employee does not have permisson to access this Form!!!");
             }
         }
         private void FormRoom_Load(object sender, EventArgs e)

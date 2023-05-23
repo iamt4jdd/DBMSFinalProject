@@ -26,47 +26,54 @@ namespace HotelManagement_ADO.AdminForms
         void LoadData()
         {
 
-            // Đưa dữ liệu lên DataGridView
-            if (bsearch)
+            try
             {
-                DataSet dataSet = dbU.FindUser(Convert.ToInt32(textID.Text), textName.Text);
-                DataTable dataTable = dataSet.Tables[0];
-                dgvUSER.DataSource = dataTable;
-                bsearch = false;
+                // Đưa dữ liệu lên DataGridView
+                if (bsearch)
+                {
+                    DataSet dataSet = dbU.FindUser(Convert.ToInt32(textID.Text), textName.Text);
+                    DataTable dataTable = dataSet.Tables[0];
+                    dgvUSER.DataSource = dataTable;
+                    bsearch = false;
+                }
+                else
+                {
+                    DataSet dataSet = dbU.TakeUser();
+                    DataTable dataTable = dataSet.Tables[0];
+
+                    dgvUSER.DataSource = dataTable;
+                    dgvUSER.AutoResizeColumns();
+
+                }
+                //// Thay đổi độ rộng cột
+                //dgvUSER.AutoResizeColumns();
+
+                // Xóa trống các đối tượng trong Panel
+                this.txtuserID.ResetText();
+                this.txtFullname.ResetText();
+                this.txtPassword.ResetText();
+                this.dtpBirthday.ResetText();
+                this.cbGender.ResetText();
+                this.txtEmail.ResetText();
+                this.txtPhone_Number.ResetText();
+                this.txtAddress.ResetText();
+                this.txtrole_id.ResetText();
+                // Không cho thao tác trên các nút Lưu / Hủy
+                this.btnSave.Enabled = false;
+                this.btnCancel.Enabled = false;
+                this.panel.Enabled = false;
+                // Cho thao tác trên các nút Thêm / Sửa / Xóa /Thoát
+                this.btnAdd.Enabled = true;
+                this.btnFix.Enabled = true;
+                this.btnDelete.Enabled = true;
+
+                //
+                dgvUSER_CellClick(null, null);
             }
-            else
+            catch
             {
-                DataSet dataSet = dbU.TakeUser();
-                DataTable dataTable = dataSet.Tables[0];
-
-                dgvUSER.DataSource = dataTable;
-                dgvUSER.AutoResizeColumns();
-
+                MessageBox.Show("Employee does not have permisson to access this Form!!!");
             }
-            //// Thay đổi độ rộng cột
-            //dgvUSER.AutoResizeColumns();
-
-            // Xóa trống các đối tượng trong Panel
-            this.txtuserID.ResetText();
-            this.txtFullname.ResetText();
-            this.txtPassword.ResetText();
-            this.dtpBirthday.ResetText();
-            this.cbGender.ResetText();
-            this.txtEmail.ResetText();
-            this.txtPhone_Number.ResetText();
-            this.txtAddress.ResetText();
-            this.txtrole_id.ResetText();
-            // Không cho thao tác trên các nút Lưu / Hủy
-            this.btnSave.Enabled = false;
-            this.btnCancel.Enabled = false;
-            this.panel.Enabled = false;
-            // Cho thao tác trên các nút Thêm / Sửa / Xóa /Thoát
-            this.btnAdd.Enabled = true;
-            this.btnFix.Enabled = true;
-            this.btnDelete.Enabled = true;
-            
-            //
-            dgvUSER_CellClick(null, null);
         }
         private void FromUser_Load(object sender, EventArgs e)
         {

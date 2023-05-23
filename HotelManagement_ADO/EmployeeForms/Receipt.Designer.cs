@@ -101,7 +101,7 @@
             this.txtStayingDays.AutoSize = true;
             this.txtStayingDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStayingDays.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtStayingDays.Location = new System.Drawing.Point(596, 199);
+            this.txtStayingDays.Location = new System.Drawing.Point(623, 199);
             this.txtStayingDays.Name = "txtStayingDays";
             this.txtStayingDays.Size = new System.Drawing.Size(0, 25);
             this.txtStayingDays.TabIndex = 116;
@@ -121,7 +121,7 @@
             this.txtRoomNumber.AutoSize = true;
             this.txtRoomNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtRoomNumber.Location = new System.Drawing.Point(615, 109);
+            this.txtRoomNumber.Location = new System.Drawing.Point(650, 109);
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(0, 25);
             this.txtRoomNumber.TabIndex = 114;
@@ -151,7 +151,7 @@
             this.txtCustomer.AutoSize = true;
             this.txtCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtCustomer.Location = new System.Drawing.Point(166, 108);
+            this.txtCustomer.Location = new System.Drawing.Point(207, 108);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(0, 25);
             this.txtCustomer.TabIndex = 111;
