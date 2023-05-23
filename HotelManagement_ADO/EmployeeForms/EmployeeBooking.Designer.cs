@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.dtpCheckOutTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpCheckInTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -62,6 +58,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdentityNum = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dtpCheckInTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpCheckOutTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookedRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvaiRoom)).BeginInit();
             this.SuspendLayout();
@@ -81,68 +81,12 @@
             this.cancelBtn.FillColor = System.Drawing.Color.Transparent;
             this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.Location = new System.Drawing.Point(1235, 830);
+            this.cancelBtn.Location = new System.Drawing.Point(1241, 823);
             this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(165, 65);
             this.cancelBtn.TabIndex = 87;
             this.cancelBtn.Text = "Cancel";
-            // 
-            // dtpCheckOutTime
-            // 
-            this.dtpCheckOutTime.Checked = true;
-            this.dtpCheckOutTime.CustomFormat = "HH:mm tt";
-            this.dtpCheckOutTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckOutTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpCheckOutTime.Location = new System.Drawing.Point(1393, 306);
-            this.dtpCheckOutTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpCheckOutTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpCheckOutTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpCheckOutTime.Name = "dtpCheckOutTime";
-            this.dtpCheckOutTime.ShowUpDown = true;
-            this.dtpCheckOutTime.Size = new System.Drawing.Size(222, 38);
-            this.dtpCheckOutTime.TabIndex = 86;
-            this.dtpCheckOutTime.Value = new System.DateTime(2023, 5, 10, 13, 43, 54, 292);
-            this.dtpCheckOutTime.ValueChanged += new System.EventHandler(this.dtpCheckOutTime_ValueChanged);
-            // 
-            // dtpCheckInTime
-            // 
-            this.dtpCheckInTime.Checked = true;
-            this.dtpCheckInTime.CustomFormat = "HH:mm tt";
-            this.dtpCheckInTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckInTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpCheckInTime.Location = new System.Drawing.Point(1393, 179);
-            this.dtpCheckInTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpCheckInTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpCheckInTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpCheckInTime.Name = "dtpCheckInTime";
-            this.dtpCheckInTime.ShowUpDown = true;
-            this.dtpCheckInTime.Size = new System.Drawing.Size(222, 38);
-            this.dtpCheckInTime.TabIndex = 85;
-            this.dtpCheckInTime.Value = new System.DateTime(2023, 5, 10, 13, 43, 54, 292);
-            this.dtpCheckInTime.ValueChanged += new System.EventHandler(this.dtpCheckInTime_ValueChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(1387, 263);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(165, 23);
-            this.label13.TabIndex = 84;
-            this.label13.Text = "Check Out Time";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label14.Location = new System.Drawing.Point(1387, 139);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(146, 23);
-            this.label14.TabIndex = 83;
-            this.label14.Text = "Check In Time";
             // 
             // label12
             // 
@@ -308,27 +252,27 @@
             this.dgvBookedRoom.AllowUserToDeleteRows = false;
             this.dgvBookedRoom.AllowUserToResizeColumns = false;
             this.dgvBookedRoom.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            this.dgvBookedRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvBookedRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBookedRoom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBookedRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBookedRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBookedRoom.ColumnHeadersHeight = 4;
             this.dgvBookedRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBookedRoom.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBookedRoom.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvBookedRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBookedRoom.Location = new System.Drawing.Point(824, 460);
             this.dgvBookedRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -377,12 +321,12 @@
             this.saveBtn.FillColor = System.Drawing.Color.Transparent;
             this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Location = new System.Drawing.Point(1443, 830);
+            this.saveBtn.Location = new System.Drawing.Point(1442, 823);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(165, 65);
             this.saveBtn.TabIndex = 69;
-            this.saveBtn.Text = "Save";
+            this.saveBtn.Text = "Book";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // dtpCheckOutDate
@@ -446,27 +390,27 @@
             this.dgvAvaiRoom.AllowUserToDeleteRows = false;
             this.dgvAvaiRoom.AllowUserToResizeColumns = false;
             this.dgvAvaiRoom.AllowUserToResizeRows = false;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
-            this.dgvAvaiRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvAvaiRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvAvaiRoom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAvaiRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAvaiRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvAvaiRoom.ColumnHeadersHeight = 4;
             this.dgvAvaiRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAvaiRoom.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAvaiRoom.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvAvaiRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAvaiRoom.Location = new System.Drawing.Point(-2, 460);
             this.dgvAvaiRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -578,6 +522,62 @@
             this.txtIdentityNum.TabIndex = 75;
             this.txtIdentityNum.TextChanged += new System.EventHandler(this.txtIdentityNum_TextChanged);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label14.Location = new System.Drawing.Point(1387, 139);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(146, 23);
+            this.label14.TabIndex = 83;
+            this.label14.Text = "Check In Time";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label13.Location = new System.Drawing.Point(1387, 263);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(165, 23);
+            this.label13.TabIndex = 84;
+            this.label13.Text = "Check Out Time";
+            // 
+            // dtpCheckInTime
+            // 
+            this.dtpCheckInTime.Checked = true;
+            this.dtpCheckInTime.CustomFormat = "HH:mm tt";
+            this.dtpCheckInTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCheckInTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpCheckInTime.Location = new System.Drawing.Point(1393, 179);
+            this.dtpCheckInTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpCheckInTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpCheckInTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpCheckInTime.Name = "dtpCheckInTime";
+            this.dtpCheckInTime.ShowUpDown = true;
+            this.dtpCheckInTime.Size = new System.Drawing.Size(222, 38);
+            this.dtpCheckInTime.TabIndex = 85;
+            this.dtpCheckInTime.Value = new System.DateTime(2023, 5, 10, 13, 43, 54, 292);
+            this.dtpCheckInTime.ValueChanged += new System.EventHandler(this.dtpCheckInTime_ValueChanged);
+            // 
+            // dtpCheckOutTime
+            // 
+            this.dtpCheckOutTime.Checked = true;
+            this.dtpCheckOutTime.CustomFormat = "HH:mm tt";
+            this.dtpCheckOutTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCheckOutTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpCheckOutTime.Location = new System.Drawing.Point(1393, 306);
+            this.dtpCheckOutTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpCheckOutTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpCheckOutTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpCheckOutTime.Name = "dtpCheckOutTime";
+            this.dtpCheckOutTime.ShowUpDown = true;
+            this.dtpCheckOutTime.Size = new System.Drawing.Size(222, 38);
+            this.dtpCheckOutTime.TabIndex = 86;
+            this.dtpCheckOutTime.Value = new System.DateTime(2023, 5, 10, 13, 43, 54, 292);
+            this.dtpCheckOutTime.ValueChanged += new System.EventHandler(this.dtpCheckOutTime_ValueChanged);
+            // 
             // EmployeeBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -626,10 +626,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Button cancelBtn;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpCheckOutTime;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpCheckInTime;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -653,5 +649,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtIdentityNum;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpCheckInTime;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpCheckOutTime;
     }
 }
