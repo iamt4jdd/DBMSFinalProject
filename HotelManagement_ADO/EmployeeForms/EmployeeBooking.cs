@@ -371,18 +371,7 @@ namespace HotelManagement_ADO.EmployeeForms
             LoadAvaiRoom();
             LoadBookedRoom();
         }
-        private void dtpCheckInTime_ValueChanged(object sender, EventArgs e)
-        {
-            tIN = this.dtpCheckInTime.Value.TimeOfDay;
-            LoadAvaiRoom();
-            LoadBookedRoom();
-        }
-        private void dtpCheckOutTime_ValueChanged(object sender, EventArgs e)
-        {
-            tOUT = this.dtpCheckOutTime.Value.TimeOfDay;
-            LoadAvaiRoom();
-            LoadBookedRoom();
-        }
+       
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             LoadBookedRoom();
