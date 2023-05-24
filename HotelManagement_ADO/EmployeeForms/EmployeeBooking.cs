@@ -43,11 +43,13 @@ namespace HotelManagement_ADO.EmployeeForms
         public EmployeeBooking()
         {
             InitializeComponent();
-            
+            LoadAvaiRoom();
+
         }
         public EmployeeBooking(int currentUserID)
         {
             InitializeComponent();
+            LoadAvaiRoom();
             this.currentUserID = currentUserID;
         }
         void LoadAvaiRoom()
@@ -87,22 +89,61 @@ namespace HotelManagement_ADO.EmployeeForms
 
             if (!string.IsNullOrEmpty(name))
             {
-                string pro = "SELECT * FROM fn_findBookingCustomerByName('"+ name+"')";
-                using (DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text))
+                //string pro = $"SELECT * FROM fn_findBookingCustomerByName(N'{name}')";
+                //using (DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text))
+                //{
+                //    DataTable dataTable = dataSet.Tables[0];
+                //    dgvBookedRoom.DataSource = dataTable;
+                //}
+                if (!string.IsNullOrEmpty(id))
                 {
-                    DataTable dataTable = dataSet.Tables[0];
-                    dgvBookedRoom.DataSource = dataTable;
+                    string pro = $"Exec FindCustomerByNameANDIDC N'{name}', '{id}'";
+                    using (DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text))
+                    {
+                        DataTable dataTable = dataSet.Tables[0];
+                        dgvBookedRoom.DataSource = dataTable;
+                    }
+
+                }
+                else
+                {
+                    string pro = $"SELECT * FROM fn_findBookingCustomerByName(N'{name}')";
+                    using (DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text))
+                    {
+                        DataTable dataTable = dataSet.Tables[0];
+                        dgvBookedRoom.DataSource = dataTable;
+                    }
                 }
             }
             else if (!string.IsNullOrEmpty(id))
             {
-                string pro = "SELECT * FROM fn_FindCustomerByIDC('"+id+"')";
+                string pro = $"SELECT * FROM fn_FindCustomerByIDC('{id}')";
                 using (DataSet dataSet = db.ExecuteQueryDataSet(pro, CommandType.Text))
                 {
                     DataTable dataTable = dataSet.Tables[0];
                     dgvBookedRoom.DataSource = dataTable;
                 }
             }
+            //if (!string.IsNullOrEmpty(name))
+            //{
+            //if (!string.IsNullOrEmpty(id))
+            //{
+            //    var pro = qlhotelEntity.FindCustomerByNameANDIDC(name, id).ToList();
+            //    dgvBookedRoom.DataSource = pro;
+
+            //}
+            //else
+            //{
+            //    var pro1 = qlhotelEntity.FindCustomerByName(name).ToList();
+            //    dgvBookedRoom.DataSource = pro1;
+            //}
+            //}
+            //else if (!string.IsNullOrEmpty(id))
+            //{
+            //    var pro2 = qlhotelEntity.FindCustomerByIDC(id).ToList();
+            //    dgvBookedRoom.DataSource = pro2;
+            //}
+
             dgvBookedRoom.AutoGenerateColumns = true;
             dgvBookedRoom.ColumnHeadersHeight = 30;
             dgvBookedRoom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
