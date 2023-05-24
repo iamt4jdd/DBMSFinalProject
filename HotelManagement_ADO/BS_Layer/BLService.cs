@@ -38,7 +38,7 @@ namespace HotelManagement_ADO.BS_Layer
         public bool DeleteService(ref string err, int serID)
         {
             try
-            {
+            {   
                 string sql = $"exec SP_DELETE_SERVICE '{serID}'";
                 db.MyExecuteNonQuery(sql);
             }

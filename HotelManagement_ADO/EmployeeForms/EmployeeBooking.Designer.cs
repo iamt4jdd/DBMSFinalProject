@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -58,35 +57,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdentityNum = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.dtpCheckInTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpCheckOutTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookedRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvaiRoom)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.BackColor = System.Drawing.Color.Transparent;
-            this.cancelBtn.BorderColor = System.Drawing.Color.White;
-            this.cancelBtn.BorderRadius = 15;
-            this.cancelBtn.BorderThickness = 1;
-            this.cancelBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(221)))));
-            this.cancelBtn.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.cancelBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.cancelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.cancelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.cancelBtn.FillColor = System.Drawing.Color.Transparent;
-            this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.Location = new System.Drawing.Point(1241, 830);
-            this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(165, 65);
-            this.cancelBtn.TabIndex = 87;
-            this.cancelBtn.Text = "Cancel";
             // 
             // label12
             // 
@@ -104,7 +77,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(914, 96);
+            this.label11.Location = new System.Drawing.Point(950, 84);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(67, 23);
             this.label11.TabIndex = 81;
@@ -334,7 +307,7 @@
             this.dtpCheckOutDate.Checked = true;
             this.dtpCheckOutDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpCheckOutDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpCheckOutDate.Location = new System.Drawing.Point(916, 306);
+            this.dtpCheckOutDate.Location = new System.Drawing.Point(952, 294);
             this.dtpCheckOutDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpCheckOutDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpCheckOutDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -349,7 +322,7 @@
             this.dtpCheckInDate.Checked = true;
             this.dtpCheckInDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpCheckInDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpCheckInDate.Location = new System.Drawing.Point(916, 179);
+            this.dtpCheckInDate.Location = new System.Drawing.Point(952, 167);
             this.dtpCheckInDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpCheckInDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpCheckInDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -460,7 +433,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(914, 267);
+            this.label5.Location = new System.Drawing.Point(950, 255);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(171, 23);
             this.label5.TabIndex = 63;
@@ -471,7 +444,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(914, 144);
+            this.label4.Location = new System.Drawing.Point(950, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 23);
             this.label4.TabIndex = 62;
@@ -522,73 +495,12 @@
             this.txtIdentityNum.TabIndex = 75;
             this.txtIdentityNum.TextChanged += new System.EventHandler(this.txtIdentityNum_TextChanged);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label14.Location = new System.Drawing.Point(1387, 139);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(146, 23);
-            this.label14.TabIndex = 83;
-            this.label14.Text = "Check In Time";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(1387, 263);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(165, 23);
-            this.label13.TabIndex = 84;
-            this.label13.Text = "Check Out Time";
-            // 
-            // dtpCheckInTime
-            // 
-            this.dtpCheckInTime.Checked = true;
-            this.dtpCheckInTime.CustomFormat = "HH:mm tt";
-            this.dtpCheckInTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckInTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpCheckInTime.Location = new System.Drawing.Point(1393, 179);
-            this.dtpCheckInTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpCheckInTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpCheckInTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpCheckInTime.Name = "dtpCheckInTime";
-            this.dtpCheckInTime.ShowUpDown = true;
-            this.dtpCheckInTime.Size = new System.Drawing.Size(222, 38);
-            this.dtpCheckInTime.TabIndex = 85;
-            this.dtpCheckInTime.Value = new System.DateTime(2023, 5, 10, 13, 43, 54, 292);
-            this.dtpCheckInTime.ValueChanged += new System.EventHandler(this.dtpCheckInTime_ValueChanged);
-            // 
-            // dtpCheckOutTime
-            // 
-            this.dtpCheckOutTime.Checked = true;
-            this.dtpCheckOutTime.CustomFormat = "HH:mm tt";
-            this.dtpCheckOutTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckOutTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpCheckOutTime.Location = new System.Drawing.Point(1393, 306);
-            this.dtpCheckOutTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpCheckOutTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpCheckOutTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpCheckOutTime.Name = "dtpCheckOutTime";
-            this.dtpCheckOutTime.ShowUpDown = true;
-            this.dtpCheckOutTime.Size = new System.Drawing.Size(222, 38);
-            this.dtpCheckOutTime.TabIndex = 86;
-            this.dtpCheckOutTime.Value = new System.DateTime(2023, 5, 10, 13, 43, 54, 292);
-            this.dtpCheckOutTime.ValueChanged += new System.EventHandler(this.dtpCheckOutTime_ValueChanged);
-            // 
             // EmployeeBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(1770, 1053);
-            this.Controls.Add(this.cancelBtn);
-            this.Controls.Add(this.dtpCheckOutTime);
-            this.Controls.Add(this.dtpCheckInTime);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -624,8 +536,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Button cancelBtn;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -649,9 +559,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtIdentityNum;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpCheckInTime;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpCheckOutTime;
     }
 }
